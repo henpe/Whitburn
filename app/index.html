@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width"/>
         <link href='http://fonts.googleapis.com/css?family=Arbutus+Slab' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="styles/main.css"/>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css"/>
     </head>
     <body>
     <div id="app">
@@ -24,12 +25,14 @@
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/vendor/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
         <script src="scripts/vendor/lodash.min.js"></script>
         <script src="scripts/vendor/backbone-min.js"></script>
         <script src="scripts/vendor/ejs/ejs.js"></script>
         <script src="scripts/plugins/jquery-ajax-localstorage-cache.js"></script>
+        <script src="scripts/vendor/soundcloud.player.api.js"></script>
         <script src="scripts/main.js"></script>
-        
+
         <script src="scripts/views/application.js"></script>
         <script src="scripts/models/application.js"></script>
         <script src="scripts/collections/application.js"></script>
@@ -38,9 +41,19 @@
         <script src="scripts/collections/tracks.js"></script>
         <script src="scripts/views/toolbar.js"></script>
         <script src="scripts/views/scatterplot.js"></script>
+        <script src="scripts/collections/player_tracks.js"></script>
+        <script src="scripts/views/player.js"></script>
 
         <script src="components/d3/d3.v2.js"></script>
         <script src="components/modernizr/modernizr.js"></script>
+        <script type="text/javascript">
+           soundcloud.addEventListener('onPlayerReady', function(player, data) {
+             //player.api_play();
+             //console.log(player);
+
+             mainPlayer = soundcloud.getPlayer('mainPlayer');
+           });
+        </script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

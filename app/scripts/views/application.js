@@ -1,6 +1,6 @@
 whitburn.Views.Application = Backbone.View.extend({
 
-  template: new EJS({url: '/scripts/templates/application.ejs'}),
+  template: new EJS({url: 'scripts/templates/application.ejs'}),
 
   initialize: function() {
     _.bindAll(this, 'render', 'setup');
@@ -13,9 +13,12 @@ whitburn.Views.Application = Backbone.View.extend({
     this.$el.html(this.template.render());
 
     // Create child views
+    var playerTracksCollection = new whitburn.Collections.PlayerTracks();
+
     this.views = {
       toolbar: new whitburn.Views.Toolbar({el: '#toolbar', model: this.model}),
-      scatterPlot: new whitburn.Views.ScatterPlot({el: '#plot', collection: this.model.get('tracks')})
+      scatterPlot: new whitburn.Views.ScatterPlot({el: '#plot', collection: this.model.get('tracks')}),
+      player:      new whitburn.Views.Player({el: '#player', collection: playerTracksCollection })
     };
     this.render();
   },

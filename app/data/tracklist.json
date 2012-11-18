@@ -1,0 +1,709 @@
+[
+    {
+        "timestamp": 0,
+        "year": "1890",
+        "artist": "U.S. Marine Band",
+        "track": "Semper Fidelis",
+        "album": ""
+    },
+    {
+        "timestamp": 6,
+        "year": "1896",
+        "artist": "Dan Quinn",
+        "track": "A Hot Time in the Old Town",
+        "album": ""
+    },
+    {
+        "timestamp": 12,
+        "year": "1900",
+        "artist": "George J. Gaskin",
+        "track": "When You Were Sweet Sixteen",
+        "album": ""
+    },
+    {
+        "timestamp": 18,
+        "year": "1903",
+        "artist": "Haydn Quartet",
+        "track": "In the Good Old Summer Time",
+        "album": ""
+    },
+    {
+        "timestamp": 24,
+        "year": "1904",
+        "artist": "Haydn Quartet",
+        "track": "Sweet Adeline (You're the Flower of My Heart)",
+        "album": ""
+    },
+    {
+        "timestamp": 30,
+        "year": "1906",
+        "artist": "Billy Murray",
+        "track": "The Grand Old Rag",
+        "album": ""
+    },
+    {
+        "timestamp": 36,
+        "year": "1909",
+        "artist": "Haydn Quartet",
+        "track": "Put on Your Old Gray Bonnet",
+        "album": ""
+    },
+    {
+        "timestamp": 42,
+        "year": "1910",
+        "artist": "American Quartet & Billy Murray",
+        "track": "Casey Jones",
+        "album": ""
+    },
+    {
+        "timestamp": 48,
+        "year": "1912",
+        "artist": "American Quartet",
+        "track": "Moonlight Bay",
+        "album": ""
+    },
+    {
+        "timestamp": 54,
+        "year": "1913",
+        "artist": "Chauncey Olcott",
+        "track": "When Irish Eyes Are Smiling",
+        "album": ""
+    },
+    {
+        "timestamp": 60,
+        "year": "1915",
+        "artist": "John McCormack",
+        "track": "It's a Long, Long Way to Tipperary",
+        "album": ""
+    },
+    {
+        "timestamp": 66,
+        "year": "1916",
+        "artist": "Henry Burr",
+        "track": "M-O-T-H-E-R (A Word That Means the World to Me)",
+        "album": ""
+    },
+    {
+        "timestamp": 72,
+        "year": "1917",
+        "artist": "American Quartet",
+        "track": "Over There",
+        "album": ""
+    },
+    {
+        "timestamp": 78,
+        "year": "1918",
+        "artist": "Henry Burr",
+        "track": "Just a Baby's Prayer at Twilight (For Her Daddy Over There)",
+        "album": ""
+    },
+    {
+        "timestamp": 84,
+        "year": "1920",
+        "artist": "Ben Selvin & His Orchestra",
+        "track": "Dardanella",
+        "album": ""
+    },
+    {
+        "timestamp": 90,
+        "year": "1921",
+        "artist": "Paul Whiteman & His Orchestra",
+        "track": "Wang Wang Blues",
+        "album": ""
+    },
+    {
+        "timestamp": 96,
+        "year": "1922",
+        "artist": "Al Jolson",
+        "track": "April Showers",
+        "album": ""
+    },
+    {
+        "timestamp": 102,
+        "year": "1923",
+        "artist": "Paul Whiteman & His Orchestra",
+        "track": "Parade of the Wooden Soldiers",
+        "album": ""
+    },
+    {
+        "timestamp": 108,
+        "year": "1924",
+        "artist": "Wendell Hall",
+        "track": "It Ain't Gonna Rain No Mo'",
+        "album": ""
+    },
+    {
+        "timestamp": 114,
+        "year": "1925",
+        "artist": "Gene Austin",
+        "track": "Yes Sir! That's My Baby",
+        "album": ""
+    },
+    {
+        "timestamp": 120,
+        "year": "1926",
+        "artist": "Paul Whiteman & His Orchestra",
+        "track": "Valencia",
+        "album": ""
+    },
+    {
+        "timestamp": 126,
+        "year": "1927",
+        "artist": "Gene Austin",
+        "track": "My Blue Heaven",
+        "album": ""
+    },
+    {
+        "timestamp": 132,
+        "year": "1928",
+        "artist": "Al Jolson",
+        "track": "Sonny Boy",
+        "album": ""
+    },
+    {
+        "timestamp": 138,
+        "year": "1929",
+        "artist": "Nick Lucas",
+        "track": "Tip Toe Through the Tulips",
+        "album": ""
+    },
+    {
+        "timestamp": 144,
+        "year": "1930",
+        "artist": "Rudy Vallee & His Connecticut Yankees",
+        "track": "Stein Song (University of Maine)",
+        "album": ""
+    },
+    {
+        "timestamp": 150,
+        "year": "1931",
+        "artist": "Don Azpiazu & His Havana Casino Orchestra",
+        "track": "The Peanut Vendor",
+        "album": ""
+    },
+    {
+        "timestamp": 156,
+        "year": "1932",
+        "artist": "Ted Lewis & His Band",
+        "track": "In A Shanty In Old Shanty Town",
+        "album": ""
+    },
+    {
+        "timestamp": 162,
+        "year": "1933",
+        "artist": "George Olsen & His Orchestra",
+        "track": "The Last Round-Up",
+        "album": ""
+    },
+    {
+        "timestamp": 168,
+        "year": "1934",
+        "artist": "Bing Crosby",
+        "track": "June In January",
+        "album": ""
+    },
+    {
+        "timestamp": 174,
+        "year": "1936",
+        "artist": "Bing Crosby",
+        "track": "Pennies from Heaven",
+        "album": ""
+    },
+    {
+        "timestamp": 180,
+        "year": "1937",
+        "artist": "Bing Crosby",
+        "track": "Sweet Leilani",
+        "album": ""
+    },
+    {
+        "timestamp": 186,
+        "year": "1938",
+        "artist": "Ella Fitzgerald (Chick Webb Orchestra)",
+        "track": "A-Tisket, A-Tasket",
+        "album": ""
+    },
+    {
+        "timestamp": 192,
+        "year": "1939",
+        "artist": "Larry Clinton & His Orchestra",
+        "track": "Deep Purple",
+        "album": ""
+    },
+    {
+        "timestamp": 198,
+        "year": "1940",
+        "artist": "Artie Shaw & His Orchestra",
+        "track": "Frenesi",
+        "album": ""
+    },
+    {
+        "timestamp": 204,
+        "year": "1941",
+        "artist": "Jimmy Dorsey & His Orchestra (Vocal Bob Eberle & Helen O'connell)",
+        "track": "Amapola",
+        "album": ""
+    },
+    {
+        "timestamp": 210,
+        "year": "1942",
+        "artist": "Bing Crosby",
+        "track": "White Christmas",
+        "album": ""
+    },
+    {
+        "timestamp": 216,
+        "year": "1943",
+        "artist": "Harry James & His Orchestra",
+        "track": "I've Heard That Song Before",
+        "album": ""
+    },
+    {
+        "timestamp": 222,
+        "year": "1944",
+        "artist": "Bing Crosby",
+        "track": "Swinging On A Star",
+        "album": ""
+    },
+    {
+        "timestamp": 228,
+        "year": "1945",
+        "artist": "Andrews Sisters",
+        "track": "Rum and Coca-Cola",
+        "album": ""
+    },
+    {
+        "timestamp": 234,
+        "year": "1946",
+        "artist": "Ink Spots",
+        "track": "The Gypsy",
+        "album": ""
+    },
+    {
+        "timestamp": 240,
+        "year": "1947",
+        "artist": "Francis Craig & His Orchestra",
+        "track": "Near You",
+        "album": ""
+    },
+    {
+        "timestamp": 246,
+        "year": "1949",
+        "artist": "Vaughn Monroe & His Orchestra",
+        "track": "Riders in the Sky (A Cowboy Legend)",
+        "album": ""
+    },
+    {
+        "timestamp": 252,
+        "year": "1950",
+        "artist": "Patti Page",
+        "track": "The Tennessee Waltz",
+        "album": ""
+    },
+    {
+        "timestamp": 258,
+        "year": "1951",
+        "artist": "Johnnie Ray & Four Lads",
+        "track": "Cry",
+        "album": ""
+    },
+    {
+        "timestamp": 264,
+        "year": "1953",
+        "artist": "Les Paul & Mary Ford",
+        "track": "Vaya Con Dios (May God Be With You)",
+        "album": ""
+    },
+    {
+        "timestamp": 270,
+        "year": "1954",
+        "artist": "Kitty Kallen",
+        "track": "Little Things Mean A Lot",
+        "album": ""
+    },
+    {
+        "timestamp": 276,
+        "year": "1955",
+        "artist": "Perez Prado and His Orchestra",
+        "track": "Cherry Pink And Apple Blossom White",
+        "album": ""
+    },
+    {
+        "timestamp": 282,
+        "year": "1956",
+        "artist": "Elvis Presley",
+        "track": "Don't Be Cruel",
+        "album": ""
+    },
+    {
+        "timestamp": 288,
+        "year": "1957",
+        "artist": "Elvis Presley",
+        "track": "All Shook Up",
+        "album": ""
+    },
+    {
+        "timestamp": 294,
+        "year": "1959",
+        "artist": "Bobby Darin",
+        "track": "Mack The Knife",
+        "album": "That's All"
+    },
+    {
+        "timestamp": 300,
+        "year": "1960",
+        "artist": "Percy Faith",
+        "track": "The Theme From \"A Summer Place\"",
+        "album": ""
+    },
+    {
+        "timestamp": 306,
+        "year": "1961",
+        "artist": "Bobby Lewis",
+        "track": "Tossin' And Turnin'",
+        "album": "Tossin' & Turnin'"
+    },
+    {
+        "timestamp": 312,
+        "year": "1962",
+        "artist": "Ray Charles",
+        "track": "I Can't Stop Loving You",
+        "album": "Modern Sounds in Country and Western Music"
+    },
+    {
+        "timestamp": 318,
+        "year": "1963",
+        "artist": "Jimmy Gilmer",
+        "track": "Sugar Shack",
+        "album": ""
+    },
+    {
+        "timestamp": 324,
+        "year": "1964",
+        "artist": "Beatles, The",
+        "track": "I Want To Hold Your Hand",
+        "album": "Meet The Beatles! - Capitol 2047"
+    },
+    {
+        "timestamp": 330,
+        "year": "1965",
+        "artist": "Rolling Stones, The",
+        "track": "(I Can't Get No) Satisfaction",
+        "album": "Out Of Our Heads - London 429"
+    },
+    {
+        "timestamp": 336,
+        "year": "1966",
+        "artist": "Monkees, The",
+        "track": "I'm A Believer",
+        "album": ""
+    },
+    {
+        "timestamp": 342,
+        "year": "1967",
+        "artist": "Lulu",
+        "track": "To Sir With Love",
+        "album": "Love Loves to Love Lulu"
+    },
+    {
+        "timestamp": 348,
+        "year": "1968",
+        "artist": "Beatles, The",
+        "track": "Hey Jude",
+        "album": ""
+    },
+    {
+        "timestamp": 354,
+        "year": "1970",
+        "artist": "Simon and Garfunkel",
+        "track": "Bridge Over Troubled Water",
+        "album": "Bridge Over Troubled Water - Columbia 9914"
+    },
+    {
+        "timestamp": 360,
+        "year": "1971",
+        "artist": "Three Dog Night",
+        "track": "Joy To The World",
+        "album": "Naturally - Dunhill/ABC 50088"
+    },
+    {
+        "timestamp": 366,
+        "year": "1972",
+        "artist": "Roberta Flack",
+        "track": "The First Time Ever I Saw Your Face",
+        "album": "First Take - Atlantic 8230"
+    },
+    {
+        "timestamp": 372,
+        "year": "1973",
+        "artist": "Roberta Flack",
+        "track": "Killing Me Softly With His Song",
+        "album": "Killing Me Softly"
+    },
+    {
+        "timestamp": 378,
+        "year": "1974",
+        "artist": "Barbra Streisand",
+        "track": "The Way We Were",
+        "album": "The Way We Were"
+    },
+    {
+        "timestamp": 384,
+        "year": "1975",
+        "artist": "Captain and Tennille, The",
+        "track": "Love Will Keep Us Together",
+        "album": "Love Will Keep Us Together - A&M SP-3405"
+    },
+    {
+        "timestamp": 390,
+        "year": "1976",
+        "artist": "Rod Stewart",
+        "track": "Tonight's The Night (Gonna Be Alright)",
+        "album": "A Night On The Town - Warner 2938"
+    },
+    {
+        "timestamp": 396,
+        "year": "1977",
+        "artist": "Debby Boone",
+        "track": "You Light Up My Life",
+        "album": ""
+    },
+    {
+        "timestamp": 402,
+        "year": "1978",
+        "artist": "Bee Gees",
+        "track": "Night Fever",
+        "album": "Saturday Night Fever"
+    },
+    {
+        "timestamp": 408,
+        "year": "1979",
+        "artist": "Knack, The",
+        "track": "My Sharona",
+        "album": "Get The Knack - Capitol SO-11948"
+    },
+    {
+        "timestamp": 414,
+        "year": "1980",
+        "artist": "Kenny Rogers",
+        "track": "Lady",
+        "album": "Greatest Hits - Liberty 46004"
+    },
+    {
+        "timestamp": 420,
+        "year": "1981",
+        "artist": "Olivia Newton-John",
+        "track": "Physical",
+        "album": ""
+    },
+    {
+        "timestamp": 426,
+        "year": "1982",
+        "artist": "Joan Jett & The Blackhearts",
+        "track": "I Love Rock 'N Roll",
+        "album": "Love Rock 'N Roll - Boardwalk NB1-33243"
+    },
+    {
+        "timestamp": 432,
+        "year": "1983",
+        "artist": "Police, The",
+        "track": "Every Breath You Take",
+        "album": "Synchronicity - A&M 3735"
+    },
+    {
+        "timestamp": 438,
+        "year": "1984",
+        "artist": "Madonna",
+        "track": "Like A Virgin",
+        "album": "Like a Virgin"
+    },
+    {
+        "timestamp": 444,
+        "year": "1985",
+        "artist": "Lionel Richie",
+        "track": "Say You, Say Me",
+        "album": "White Knights (Soundtrack) - Atlantic 81273"
+    },
+    {
+        "timestamp": 450,
+        "year": "1986",
+        "artist": "Dionne & Friends",
+        "track": "That's What Friends Are For",
+        "album": "Friends"
+    },
+    {
+        "timestamp": 456,
+        "year": "1987",
+        "artist": "George Michael",
+        "track": "Faith",
+        "album": ""
+    },
+    {
+        "timestamp": 462,
+        "year": "1988",
+        "artist": "Steve Winwood",
+        "track": "Roll With It",
+        "album": "Roll With It - Virgin 90946"
+    },
+    {
+        "timestamp": 468,
+        "year": "1989",
+        "artist": "Phil Collins",
+        "track": "Another Day In Paradise",
+        "album": "…But Seriously - Atlantic 82050"
+    },
+    {
+        "timestamp": 474,
+        "year": "1990",
+        "artist": "Stevie B",
+        "track": "Because I Love You (The Postman Song)",
+        "album": "Love & Emotion"
+    },
+    {
+        "timestamp": 480,
+        "year": "1991",
+        "artist": "Bryan Adams",
+        "track": "(Everything I Do) I Do It For You",
+        "album": "Robin Hood: Prince Of Thieves (Soundtrack) - Morgan Creek 20004"
+    },
+    {
+        "timestamp": 486,
+        "year": "1992",
+        "artist": "Whitney Houston",
+        "track": "I Will Always Love You",
+        "album": "The Bodyguard"
+    },
+    {
+        "timestamp": 492,
+        "year": "1993",
+        "artist": "Mariah Carey",
+        "track": "Dreamlover",
+        "album": "Music Box"
+    },
+    {
+        "timestamp": 498,
+        "year": "1994",
+        "artist": "Boyz II Men",
+        "track": "I'll Make Love To You",
+        "album": ""
+    },
+    {
+        "timestamp": 504,
+        "year": "1995",
+        "artist": "Mariah Carey",
+        "track": "One Sweet Day",
+        "album": ""
+    },
+    {
+        "timestamp": 510,
+        "year": "1996",
+        "artist": "Los Del Rio",
+        "track": "Macarena (Bayside Boys Mix)",
+        "album": ""
+    },
+    {
+        "timestamp": 516,
+        "year": "1997",
+        "artist": "Elton John",
+        "track": "Candle In The Wind 1997",
+        "album": ""
+    },
+    {
+        "timestamp": 522,
+        "year": "1998",
+        "artist": "Brandy & Monica",
+        "track": "The Boy Is Mine",
+        "album": ""
+    },
+    {
+        "timestamp": 528,
+        "year": "1999",
+        "artist": "Santana",
+        "track": "Smooth",
+        "album": "Supernatural - Arista 19081"
+    },
+    {
+        "timestamp": 534,
+        "year": "2000",
+        "artist": "Destiny's Child",
+        "track": "Independent Women Part I",
+        "album": "Survivor"
+    },
+    {
+        "timestamp": 540,
+        "year": "2001",
+        "artist": "Janet",
+        "track": "All For You",
+        "album": ""
+    },
+    {
+        "timestamp": 546,
+        "year": "2002",
+        "artist": "Eminem",
+        "track": "Lose Yourself",
+        "album": "8 Mile (Soundtrack) - Shady 493508"
+    },
+    {
+        "timestamp": 552,
+        "year": "2003",
+        "artist": "OutKast",
+        "track": "Hey Ya!",
+        "album": "Speakerboxx/The Love Below - Arista 50133"
+    },
+    {
+        "timestamp": 558,
+        "year": "2004",
+        "artist": "Usher",
+        "track": "Yeah!",
+        "album": ""
+    },
+    {
+        "timestamp": 564,
+        "year": "2005",
+        "artist": "Mariah Carey",
+        "track": "We Belong Together",
+        "album": ""
+    },
+    {
+        "timestamp": 570,
+        "year": "2006",
+        "artist": "Beyonce",
+        "track": "Irreplaceable",
+        "album": ""
+    },
+    {
+        "timestamp": 576,
+        "year": "2007",
+        "artist": "Soulja Boy Tell'em",
+        "track": "Crank That (Soulja Boy)",
+        "album": ""
+    },
+    {
+        "timestamp": 582,
+        "year": "2008",
+        "artist": "Flo Rida",
+        "track": "Low",
+        "album": "Low - EP"
+    },
+    {
+        "timestamp": 588,
+        "year": "2009",
+        "artist": "Lady GaGa",
+        "track": "Just Dance",
+        "album": "The Fame"
+    },
+    {
+        "timestamp": 594,
+        "year": "2010",
+        "artist": "Ke$ha",
+        "track": "TiK ToK",
+        "album": "Animal"
+    },
+    {
+        "timestamp": 600,
+        "year": "2011",
+        "artist": "Rick Ross",
+        "track": "Aston Martin Music",
+        "album": "Teflon Don"
+    }
+]

@@ -8,7 +8,7 @@ body {
 
 /* Layout */
 #toolbar {
-  background:#555 url(../images/diagmonds.png) repeat 0 0;  
+  background:#555 url(../images/diagmonds.png) repeat 0 0;
   height: 50px;
   width:100%;
 }
@@ -27,6 +27,10 @@ body {
   left: 0;
   right: 0;
 }
+#player .slider {
+    margin: 20px 10px;
+}
+
 
 /* Toolbar */
 #toolbar {
@@ -82,5 +86,5 @@ body {
 }
 
 .dot {
-  
+
 }
