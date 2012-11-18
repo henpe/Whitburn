@@ -29,7 +29,7 @@ body {
 }
 #player .slider {
     margin: 20px 10px;
-    width: 90%;
+    width: 85%;
     float: left;
 }
 #player .soundcloud-container {
@@ -46,6 +46,11 @@ body {
 }
 #player.playing .play-pause {
     background: transparent url(../images/pause.png) no-repeat 0 0;
+}
+#player .year {
+    float: right;
+    color: orange;
+    margin-right: 20px
 }
 
 

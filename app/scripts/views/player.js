@@ -37,8 +37,14 @@ whitburn.Views.Player = Backbone.View.extend({
 
       this.$('.slider').slider('value', year);
 
-      console.log('going to year '+year);
+      this.goToYear(year);
     }
+  },
+
+  goToYear: function(year) {
+      this.currentYear = year;
+      this.$('.year').text(year);
+      console.log('going to year '+year);
   },
 
   render: function() {
@@ -57,6 +63,7 @@ whitburn.Views.Player = Backbone.View.extend({
       },
       slide: function(event, ui) {
         self.currentYear = ui.value;
+        self.goToYear(self.currentYear);
 
         var track = self.collection.getTrackForYear(self.currentYear);
         if (track) {
