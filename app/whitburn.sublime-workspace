@@ -1,0 +1,530 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"time",
+				"timedelta"
+			],
+			[
+				"date",
+				"datetime"
+			],
+			[
+				"local",
+				"localhost"
+			],
+			[
+				"pote",
+				"potentialScore"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"math",
+				"matchTimer"
+			],
+			[
+				"match",
+				"matchTimer"
+			],
+			[
+				"qui",
+				"quizId"
+			],
+			[
+				"user",
+				"userId"
+			],
+			[
+				"S",
+				"SERVER"
+			],
+			[
+				"sub",
+				"submitBet"
+			],
+			[
+				"start",
+				"startTime"
+			],
+			[
+				"append",
+				"appendTo"
+			],
+			[
+				"di",
+				"dialog-quiz"
+			],
+			[
+				"in",
+				"initListeners"
+			],
+			[
+				"pa-res",
+				"pa-results-grouplist"
+			],
+			[
+				"pa-i",
+				"pa-ie-document-mode-7"
+			],
+			[
+				"pa-re",
+				"pa-results-filter"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"pa-ie7",
+				"pa-ie-document-mode-7"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"pa-sched",
+				"pa-schedule-sport"
+			],
+			[
+				"pa-ie",
+				"pa-ie7"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"bacl",
+				"background-color"
+			],
+			[
+				"pa-live",
+				"pa-live-indicator"
+			],
+			[
+				"res",
+				"resizeStandards"
+			],
+			[
+				"outer",
+				"outerHeight"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"backgr",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 2085,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/JSLint/JSLint.sublime-build",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/usr/local/share/echo-nest-remix-examples/capsule/capsule.py",
+		"/usr/local/share/echo-nest-remix-examples/cowbell/cowbell.py",
+		"/usr/local/share/echo-nest-remix-examples/videx/vone.py",
+		"/usr/local/share/echo-nest-remix-examples/videx/vafroma.py",
+		"/Sites/henrik/jamstats/app/scripts/router.js",
+		"/Sites/henrik/grunttest/app/modules/todo.js",
+		"/Sites/henrik/jamstats/app/scripts/modules/user.js",
+		"/Sites/henrik/jamstats/app/scripts/templates/layouts/user.html",
+		"/Sites/henrik/grunttest/app/router.js",
+		"/Sites/henrik/jamstats/app/scripts/app.js",
+		"/Sites/henrik/grunttest/app/modules/todo/views.js",
+		"/Sites/henrik/jamstats/app/scripts/modules/user/views.js",
+		"/Sites/henrik/jamstats/app/scripts/templates/user/summary.html",
+		"/Sites/henrik/jamstats/app/index.html",
+		"/Sites/henrik/jamstats/app/scripts/templates/layouts/index.html",
+		"/Sites/henrik/jamstats/app/scripts/main.js",
+		"/Sites/henrik/jamstats/.jshintrc",
+		"/Users/henrik/Library/Application Support/Sublime Text 2/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/henrik/Library/Application Support/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/henrik/Library/Application Support/Sublime Text 2/Packages/User/JSON.sublime-settings",
+		"/Sites/henrik/jamstats/app/scripts/collections/users.js",
+		"/Sites/henrik/jamstats/app/scripts/models/user.js",
+		"/Sites/henrik/jamstats/package.json",
+		"/Sites/henrik/jamstats/Gruntfile.js",
+		"/Sites/henrik/jamstats/app/scripts/collections/users-collection.js",
+		"/Sites/henrik/footywithfriends/app/controllers/competition.js",
+		"/Users/henrik/PA/widgets-node/views/global/results-js.hbs",
+		"/Users/henrik/PA/widgets-node/views/schedule/schedule-header.hbs",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-pt-pt.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-it-it.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-fr-be.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-tr-tr.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-zh-cn.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/nrk-nb-no.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-fi-fi.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-sv-se.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-de-de.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-gr-gr.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-de-at.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-de-ch.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-es-ar.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-hu-hu.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-id-id.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-ja-jp.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-nb-no.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-nl-be.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-nl-nl.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-ru-ru.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-pt-br.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-pl-pl.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-es-es.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-es-mx.css",
+		"/Users/henrik/PA/widgets-node/views/global/eventday-js.hbs",
+		"/Users/henrik/PA/widgets-node/public/test/msn_dept2.html",
+		"/Users/henrik/PA/widgets-node/public/test/msn_dept1.html",
+		"/Users/henrik/PA/widgets-node/public/test/msn_photopage.html",
+		"/Users/henrik/PA/widgets-node/views/global/widgets-css.hbs",
+		"/Users/henrik/PA/widgets-node/public/js/msn_widget.js",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-el-gr.css",
+		"/Users/henrik/PA/widgets-node/views/global/pa-widget-factory-js.hbs",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-da-dk.css",
+		"/Users/henrik/PA/widgets-node/public/js/msn-facade.js",
+		"/Users/henrik/PA/widgets-node/views/schedule/schedule-widget-html.hbs",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-zh-hk.css",
+		"/Users/henrik/PA/widgets-node/public/css/customer/msn-zh-tw.css",
+		"/Users/henrik/PA/widgets-node/public/css/global.css",
+		"/Users/henrik/PA/widgets-node/public/js/sqwidget/sqwidget.js",
+		"/Users/henrik/PA/widgets-node/public/test/msn_js_embed_test.html",
+		"/Users/henrik/pa_msn.html",
+		"/Users/henrik/PA/widgets-node/views/schedule/schedule.hbs",
+		"/Users/henrik/PA/widgets-node/views/global/css/de-de/widgets-css.hbs",
+		"/Users/henrik/PA/widgets-node/public/css/widgets.css",
+		"/Users/henrik/PA/widgets-node/views/global/css/sv-se/widgets-css.hbs",
+		"/Users/henrik/PA/widgets-node/views/global/css/nb-no/widgets-css.hbs",
+		"/Sites/henrik/pa_msn.html",
+		"/Sites/henrik/wordpress/wp-content/themes/brixtongreen-v2/functions.php",
+		"/Sites/henrik/wordpress/wp-content/themes/brixtongreen-v2/forms/shares-form.php",
+		"/Sites/henrik/wordpress/wp-content/plugins/bg-shares/bg_shares.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/henrik/PA/widgets-node/public/js",
+			"/Users/henrik/PA/widgets-node/public/css/customer"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"lates",
+			"alert",
+			"slide",
+			"5000",
+			"5000s",
+			"5000",
+			"5000selse",
+			"5000",
+			"local",
+			".js",
+			"tabsor",
+			"pa-results",
+			".pa-fields .pa-button .pa-submit",
+			"pa-button",
+			"#pa-schedule-sport",
+			"table.pa-medaltable td.pa-rank",
+			"table.pa-medaltable td.pa-rank, table.pa-medaltable td.pa-country",
+			"pa-medalta",
+			"table.pa-eventDay td.pa-live-indicator .indicator_live_btn, table.pa-results-view th .indicator_live_btn",
+			"table.pa-eventDay td.pa-live-indicator .indicator_live_btn, table.pa-results-view th .indicator_live_btn {",
+			"pa-live-indicator",
+			"ie7",
+			"table.pa-eventDay td.pa-live-indicator .indicator_live_btn, table.pa-results-view th .indicator_live_btn",
+			"document.read",
+			"PA.",
+			"event-day",
+			"eventday",
+			"resizeMedalTable",
+			"pa-ie",
+			"resizeSt",
+			"resizeStandards",
+			".pa-button",
+			"79px",
+			"js",
+			"overflor",
+			"pa-ie",
+			"scrolla",
+			"medaltable th.pa-sport",
+			"body .pa-narrow .pa-break-fields label",
+			"select",
+			".paolympics {",
+			"select",
+			"!imp",
+			"ie",
+			"css",
+			"height",
+			"msn_widget",
+			"msn_widget.js",
+			"menu-"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 2085,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								668,
+								668
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.jslint_result_view":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 239.0,
+	"status_bar_visible": true
+}
