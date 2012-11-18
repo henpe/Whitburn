@@ -45,6 +45,9 @@ whitburn.Views.Player = Backbone.View.extend({
       this.currentYear = year;
       this.$('.year').text(year);
       console.log('going to year '+year);
+
+      // Broadcast here
+      this.model.trigger('player:year', this.currentYear);
   },
 
   render: function() {
@@ -69,9 +72,6 @@ whitburn.Views.Player = Backbone.View.extend({
         if (track) {
           mainPlayer.api_seekTo(track.get('timestamp'));
           mainPlayer.api_play();
-
-          // Broadcast here
-          self.model.trigger('player:year', self.currentYear);
         }
       }
     });

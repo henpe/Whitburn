@@ -5,7 +5,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
   initialize: function() {
     _.bindAll(this, 'render', 'renderPlot', 'updateYear');
 
-    this.currentYear = 1890; // Shouldn't be hardcoded
+    this.currentYear = '1890'; // Shouldn't be hardcoded
 
     this.model.bind('change:param_x', this.render);
     this.model.bind('change:param_y', this.render);
@@ -123,7 +123,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
       .enter().append("circle")
         .attr("class", "dot")
         //.attr("id", function(d) { return d.id; })
-        .attr("id", function(d) { return d.year; })
+        .attr("id", function(d) { return 'year-' + d.year; })
         .attr("r", function(d) { return size(d.size); })
         .attr("title", function(d) { return d.name; })
         .attr("cx", function(d) { return x(d.x); })
@@ -132,14 +132,19 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
   },
 
   updateYear: function(year) {
-    console.log(this.currentYear, year);
-    if (this.currentYear !== year) { 
-      console.log('change year');
-      this.$el.find('circle#' + this.currentYear).removeClass('active');
-      this.$el.find('circle#' + year).addClass('active');
-      console.log(this.$el.find('circle#' + year), year);
+    if (this.currentYear !== year) {
+      var currentTrack = this.collection.find(function(track){
+        return (track.get('year').getFullYear() === parseInt(year));
+      });
+      
+      console.log(currentTrack);
+      this.$el.find('.artist').text(currentTrack.get('artist'));
+      this.$el.find('.track-name').text(currentTrack.get('name'));
+      //this.$el.find('.year').text(year);
+
+      d3.select('circle#year-' + this.currentYear).attr('class', 'dot');
+      d3.select('circle#year-1996' + year).attr('class', 'dot active');
       this.currentYear = year;
-      console.log('year', year, this.currentYear);
     };
   }
 

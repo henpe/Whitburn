@@ -91,6 +91,9 @@ body {
   height:100%;
   width:100%;
 }
+#plot h2 {
+  text-align: center;
+}
 /* SVG */
 .axis path,
 .axis line {
