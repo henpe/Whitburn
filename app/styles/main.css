@@ -106,7 +106,7 @@ body {
 .axis.x .tick {
   stroke:none;
 }
-.dot.selected {
+.dot.active {
   fill: #0f0 !important;
 }
 .dot {

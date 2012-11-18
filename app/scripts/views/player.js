@@ -71,7 +71,7 @@ whitburn.Views.Player = Backbone.View.extend({
           mainPlayer.api_play();
 
           // Broadcast here
-
+          self.model.trigger('player:year', self.currentYear);
         }
       }
     });

@@ -3,12 +3,15 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
   template: new EJS({url: 'scripts/templates/scatterplot.ejs'}),
 
   initialize: function() {
-    _.bindAll(this, 'render', 'renderPlot');
+    _.bindAll(this, 'render', 'renderPlot', 'updateYear');
+
+    this.currentYear = 1890; // Shouldn't be hardcoded
 
     this.model.bind('change:param_x', this.render);
     this.model.bind('change:param_y', this.render);
     this.model.bind('change:param_colour', this.render);
     this.model.bind('change:param_size', this.render);
+    this.model.bind('player:year', this.updateYear);
   },
 
   render: function() {
@@ -88,8 +91,6 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
       });
     });
 
-    console.log(data);
-
     x.domain(d3.extent(data, function(d) { return d.x; })).nice();
     y.domain(d3.extent(data, function(d) { return d.y; })).nice();
     color.domain(d3.extent(data, function(d) { return d.color; })).nice();
@@ -121,13 +122,25 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         .data(data)
       .enter().append("circle")
         .attr("class", "dot")
-        .attr("id", function(d) { return d.id; })
-        .attr("year", function(d) { return 'year-' + d.year; })
+        //.attr("id", function(d) { return d.id; })
+        .attr("id", function(d) { return d.year; })
         .attr("r", function(d) { return size(d.size); })
         .attr("title", function(d) { return d.name; })
         .attr("cx", function(d) { return x(d.x); })
         .attr("cy", function(d) { return y(d.y); })
         .style("fill", function(d) { return color(d.color); });
+  },
+
+  updateYear: function(year) {
+    console.log(this.currentYear, year);
+    if (this.currentYear !== year) { 
+      console.log('change year');
+      this.$el.find('circle#' + this.currentYear).removeClass('active');
+      this.$el.find('circle#' + year).addClass('active');
+      console.log(this.$el.find('circle#' + year), year);
+      this.currentYear = year;
+      console.log('year', year, this.currentYear);
+    };
   }
 
 });
