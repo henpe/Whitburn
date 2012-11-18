@@ -29,14 +29,35 @@ body {
 }
 
 /* Toolbar */
+#toolbar {
+  color:#eee;
+}
 #toolbar h1 {
   margin:0;
   padding:0;
-  color:#ccc;
+  color:#666;
   font-weight: bold;
-  position:absolute;
+  position: absolute;
+  right:10px;
   top:10px;
-  left:8px;
+}
+#toolbar h2 {
+  margin:0 10px 0 0;
+  padding:0;
+  color:#999;
+  font-size: 16px
+}
+#toolbar .filters {
+  position: absolute;
+  top:15px;
+  left:10px;
+}
+#toolbar .filters h2,
+#toolbar .filters div {
+  display: inline-block;
+}
+#toolbar .filters label {
+  font-size: 12px;
 }
 
 /* Plot */
