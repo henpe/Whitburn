@@ -95,8 +95,8 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Energy");
+        .style("text-anchor", "end")/*
+        .text("Energy");*/
 
     svg.selectAll(".dot")
         .data(data)

@@ -1,42 +1,65 @@
 body {
-  font: 10px sans-serif;
+  font-family: 'Arbutus Slab', serif;
+  font-size:12px;
   margin:0;
   padding:0;
+  background:#eee url(../images/billie_holiday.png) repeat 0 0;
 }
 
+/* Layout */
 #toolbar {
-	height: 50px;
-	background-color: #555;
-	width:100%;
+  background:#555 url(../images/diagmonds.png) repeat 0 0;  
+  height: 50px;
+  width:100%;
 }
 #plot {
-	background: #eee;
-	position:absolute;
-	top:50px;
-	right:0;
-	left:0;
-	bottom:50px;
+  position:absolute;
+  top:50px;
+  right:0;
+  left:0;
+  bottom:50px;
 }
 #player {
-	background: #555;
-	height: 50px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
+  background:#555 url(../images/diagmonds.png) repeat 0 0;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
+
+/* Toolbar */
+#toolbar h1 {
+  margin:0;
+  padding:0;
+  color:#ccc;
+  font-weight: bold;
+  position:absolute;
+  top:10px;
+  left:8px;
+}
+
+/* Plot */
 .scatterplot {
-	height:100%;
-	width:100%;
+  height:100%;
+  width:100%;
 }
 /* SVG */
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
   shape-rendering: crispEdges;
+}
+.tick {
+  stroke: #ccc;
+}
+.axis.x path {
+  stroke: #ccc;
+}
+.axis.x .tick {
+  stroke:none;
 }
 
 .dot {
-  stroke: #000;
+  
 }
