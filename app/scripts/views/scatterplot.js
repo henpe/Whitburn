@@ -3,7 +3,10 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
   template: new EJS({url: '/scripts/templates/scatterplot.ejs'}),
 
   initialize: function() {
-    _.bindAll(this, 'render');
+    _.bindAll(this, 'render', 'renderPlot');
+
+    this.model.bind('change:param_x', this.render);
+    this.model.bind('change:param_y', this.render);
   },
 
   render: function() {
@@ -16,6 +19,9 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
   },
 
   renderPlot: function() {
+    var param_x = this.model.get('param_x') || 'year',
+        param_y = this.model.get('param_y') || 'song_hotttnesss';
+
     var containerHeight = this.$el.height();
         containerWidth = this.$el.width();
 
@@ -62,9 +68,12 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
       var hotness = track.get('song_hotttnesss'),
           summary = track.get('audio_summary');
       if (!hotness) return;
+      var x = (param_x.indexOf('summary.') !== -1) ? summary[param_x.split('summary.')[1]] : track.get(param_x),
+          y = (param_y.indexOf('summary.') !== -1) ? summary[param_y.split('summary.')[1]] : track.get(param_y);
+
       data.push({
-        x: track.get('year'),
-        y: hotness,
+        x: x,
+        y: y,
         size: summary.duration,
         color: track.get('song_hotttnesss'),
         name: track.get('name')

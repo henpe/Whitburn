@@ -15,7 +15,7 @@ whitburn.Views.Application = Backbone.View.extend({
     // Create child views
     this.views = {
       toolbar: new whitburn.Views.Toolbar({el: '#toolbar', model: this.model}),
-      scatterPlot: new whitburn.Views.ScatterPlot({el: '#plot', collection: this.model.get('tracks')})
+      scatterPlot: new whitburn.Views.ScatterPlot({el: '#plot', model: this.model, collection: this.model.get('tracks')})
     };
     this.render();
   },
