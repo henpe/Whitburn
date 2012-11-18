@@ -92,6 +92,8 @@ body {
   width:100%;
 }
 #plot h2 {
+  position: absolute;
+  width:100%;
   text-align: center;
 }
 /* SVG */
