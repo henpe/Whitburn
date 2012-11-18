@@ -89,7 +89,9 @@ body {
 .axis.x .tick {
   stroke:none;
 }
-
+.dot.selected {
+  fill: #0f0 !important;
+}
 .dot {
 
 }

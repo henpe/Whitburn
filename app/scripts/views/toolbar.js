@@ -2,8 +2,10 @@ whitburn.Views.Toolbar = Backbone.View.extend({
 
   template: new EJS({url: 'scripts/templates/toolbar.ejs'}),
   events: {
-    "change .filter-x" : "onChangeX",
-    "change .filter-y" : "onChangeY"
+    "change .filter-x"      : "onChangeX",
+    "change .filter-y"      : "onChangeY",
+    "change .filter-colour" : "onChangeColour",
+    "change .filter-size"   : "onChangeSize"
   },
 
   initialize: function() {
@@ -24,6 +26,16 @@ whitburn.Views.Toolbar = Backbone.View.extend({
   onChangeY: function(e) {
     var target = $(e.target);
     this.model.set('param_y', target.val());
+  },
+
+  onChangeColour: function(e) {
+    var target = $(e.target);
+    this.model.set('param_colour', target.val());
+  },
+
+  onChangeSize: function(e) {
+    var target = $(e.target);
+    this.model.set('param_size', target.val());
   }
 
 });

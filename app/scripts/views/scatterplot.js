@@ -7,6 +7,8 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
 
     this.model.bind('change:param_x', this.render);
     this.model.bind('change:param_y', this.render);
+    this.model.bind('change:param_colour', this.render);
+    this.model.bind('change:param_size', this.render);
   },
 
   render: function() {
@@ -20,7 +22,9 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
 
   renderPlot: function() {
     var param_x = this.model.get('param_x') || 'year',
-        param_y = this.model.get('param_y') || 'song_hotttnesss';
+        param_y = this.model.get('param_y') || 'no_of_weeks_charted',
+        param_colour = this.model.get('param_colour') || 'song_hotttnesss',
+        param_size = this.model.get('param_size') || 'summary.duration';
 
     var containerHeight = this.$el.height();
         containerWidth = this.$el.width();
@@ -68,17 +72,23 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
       var hotness = track.get('song_hotttnesss'),
           summary = track.get('audio_summary');
       if (!hotness) return;
-      var x = (param_x.indexOf('summary.') !== -1) ? summary[param_x.split('summary.')[1]] : track.get(param_x),
-          y = (param_y.indexOf('summary.') !== -1) ? summary[param_y.split('summary.')[1]] : track.get(param_y);
+      var pX = (param_x.indexOf('summary.') !== -1) ? summary[param_x.split('summary.')[1]] : track.get(param_x),
+          pY = (param_y.indexOf('summary.') !== -1) ? summary[param_y.split('summary.')[1]] : track.get(param_y),
+          pColour = (param_colour.indexOf('summary.') !== -1) ? summary[param_colour.split('summary.')[1]] : track.get(param_colour);
+          pSize = (param_size.indexOf('summary.') !== -1) ? summary[param_size.split('summary.')[1]] : track.get(param_size);
 
       data.push({
-        x: x,
-        y: y,
-        size: summary.duration,
-        color: track.get('song_hotttnesss'),
-        name: track.get('name')
+        id: track.get('id'),
+        x: pX,
+        y: pY,
+        size: pSize,
+        color: pColour,
+        name: track.get('name'),
+        year: track.get('year').getFullYear()
       });
     });
+
+    console.log(data);
 
     x.domain(d3.extent(data, function(d) { return d.x; })).nice();
     y.domain(d3.extent(data, function(d) { return d.y; })).nice();
@@ -111,6 +121,8 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         .data(data)
       .enter().append("circle")
         .attr("class", "dot")
+        .attr("id", function(d) { return d.id; })
+        .attr("year", function(d) { return 'year-' + d.year; })
         .attr("r", function(d) { return size(d.size); })
         .attr("title", function(d) { return d.name; })
         .attr("cx", function(d) { return x(d.x); })
