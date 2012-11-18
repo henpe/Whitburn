@@ -30,6 +30,11 @@ body {
 #player .slider {
     margin: 20px 10px;
 }
+#player .soundcloud-container {
+    position: absolute;
+    top: 0;
+    left: -1000px;
+}
 
 
 /* Toolbar */
