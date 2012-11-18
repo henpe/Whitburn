@@ -3,6 +3,10 @@ whitburn.Views.Player = Backbone.View.extend({
   template: new EJS({url: 'scripts/templates/player.ejs'}),
   scrubbing: false,
 
+  events: {
+    'click .play-pause' : 'handlePlayPause'
+  },
+
   initialize: function() {
     _.bindAll(this, 'render');
 
@@ -10,6 +14,20 @@ whitburn.Views.Player = Backbone.View.extend({
     setInterval(function() {
       self.updateSlider();
     }, 1000);
+
+
+    soundcloud.addEventListener('onMediaPlay', function(player, data) {
+      self.$el.addClass('playing');
+
+    });
+    soundcloud.addEventListener('onMediaPause', function(player, data) {
+      self.$el.removeClass('playing');
+    });
+
+  },
+
+  handlePlayPause: function() {
+    mainPlayer.api_toggle();
   },
 
   updateSlider: function() {

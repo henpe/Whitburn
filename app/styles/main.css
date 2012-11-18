@@ -29,11 +29,23 @@ body {
 }
 #player .slider {
     margin: 20px 10px;
+    width: 90%;
+    float: left;
 }
 #player .soundcloud-container {
     position: absolute;
     top: 0;
     left: -1000px;
+}
+#player .play-pause {
+    width: 40px;
+    height: 40px;
+    background: transparent url(../images/play.png) no-repeat 0 0;
+    margin: 4px;
+    float: left;
+}
+#player.playing .play-pause {
+    background: transparent url(../images/pause.png) no-repeat 0 0;
 }
 
 
