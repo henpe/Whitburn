@@ -17,8 +17,8 @@ whitburn.Views.Application = Backbone.View.extend({
 
     this.views = {
       toolbar: new whitburn.Views.Toolbar({el: '#toolbar', model: this.model}),
-      scatterPlot: new whitburn.Views.ScatterPlot({el: '#plot', collection: this.model.get('tracks')}),
-      player:      new whitburn.Views.Player({el: '#player', collection: playerTracksCollection })
+      scatterPlot: new whitburn.Views.ScatterPlot({el: '#plot', model: this.model, collection: this.model.get('tracks')}),
+      player:      new whitburn.Views.Player({el: '#player', model: this.model, collection: playerTracksCollection })
     };
     this.render();
   },
