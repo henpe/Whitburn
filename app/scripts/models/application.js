@@ -24,7 +24,17 @@ whitburn.Models.Application = Backbone.Model.extend({
             });
           });
           self.set('tracks', new app.Collections.Tracks(tracks));
-          self.set('isInitialized', true);
+
+          // Dirty hack to make it work
+          var initTimeout = window.setInterval(function() {
+            var isReady = self.get('tracks').all(function(track) {
+              return track.get('isInitialized');
+            });
+            if (isReady === true) {
+              self.set('isInitialized', true);
+              window.clearInterval(initTimeout);
+            }
+          }, 1000);
         }
       }
     );

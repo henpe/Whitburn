@@ -5,6 +5,7 @@ window.whitburn = {
   FUSION_TABLE: '1JoU4fhMqQNoQuHRpwXszLcF02vJ7Yhla3iiPmmk',
   ECHONEST_API: 'http://developer.echonest.com/api/v4',
   ECHONEST_KEY: 'ZUDBPBLHIZ8VN23BR',
+  ECHONEST_PROXY: 'http://www.deepcobalt.com/labs/whitburn/proxy/?url=',
 
   Models: {},
   Collections: {},
@@ -15,7 +16,7 @@ window.whitburn = {
     var self = this;
 
     app.model = new whitburn.Models.Application();
-    app.view = new whitburn.Views.Application({model: app.model, el: '#container'});
+    app.view = new whitburn.Views.Application({model: app.model, el: '#app'});
   }
 };
 

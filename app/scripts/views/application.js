@@ -10,10 +10,11 @@ whitburn.Views.Application = Backbone.View.extend({
   },
 
   setup: function() {
+    this.$el.html(this.template.render());
+
     // Create child views
-    console.log('x', this.model);
     this.views = {
-      scatterPlot: new whitburn.Views.ScatterPlot({collection: this.model.get('tracks')})
+      scatterPlot: new whitburn.Views.ScatterPlot({el: '#plot', collection: this.model.get('tracks')})
     };
     this.render();
   },
@@ -23,7 +24,6 @@ whitburn.Views.Application = Backbone.View.extend({
     //this.$el.html(this.template.render());
 
     _.each(this.views, function(view) {
-      self.$el.append(view.el);
       view.render();
     });
   }

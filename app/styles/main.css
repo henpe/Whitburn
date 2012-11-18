@@ -1,1 +1,42 @@
-/* Will be compiled down to a single stylesheet with your sass files */
+body {
+  font: 10px sans-serif;
+  margin:0;
+  padding:0;
+}
+
+#toolbar {
+	height: 50px;
+	background-color: #555;
+	width:100%;
+}
+#plot {
+	background: #eee;
+	position:absolute;
+	top:50px;
+	right:0;
+	left:0;
+	bottom:50px;
+}
+#player {
+	background: #555;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.scatterplot {
+	height:100%;
+	width:100%;
+}
+/* SVG */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
