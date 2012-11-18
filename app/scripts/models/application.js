@@ -6,7 +6,7 @@ whitburn.Models.Application = Backbone.Model.extend({
     $.ajax(
       app.FUSION_API + '/query',
       {
-        dataType: 'json',
+        dataType: 'jsonp',
         data: {
           key: app.FUSION_KEY,
           sql: 'SELECT Year, Artist, Track, Album, Time, CH FROM ' + app.FUSION_TABLE
