@@ -8,3 +8,5 @@ tools/output/*
 proxy/cachetmp/*
 
 *.log
+
+npm-debug.log
