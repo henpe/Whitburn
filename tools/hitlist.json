@@ -1,0 +1,749 @@
+{
+ "kind": "fusiontables#sqlresponse",
+ "columns": [
+  "Year",
+  "Artist",
+  "Track",
+  "Album"
+ ],
+ "rows": [
+ [
+   "2012",
+   "Carly Rae Jepsen",
+   "Call Me Maybe",
+   ""
+  ],
+  [
+   "2011",
+   "Rick Ross",
+   "Aston Martin Music",
+   "Teflon Don"
+  ],
+  [
+   "2010",
+   "Ke$ha",
+   "TiK ToK",
+   "Animal"
+  ],
+  [
+   "2009",
+   "Lady GaGa",
+   "Just Dance",
+   "The Fame"
+  ],
+  [
+   "2008",
+   "Flo Rida",
+   "Low",
+   "Low - EP"
+  ],
+  [
+   "2007",
+   "Soulja Boy Tell'em",
+   "Crank That (Soulja Boy)",
+   ""
+  ],
+  [
+   "2006",
+   "Beyonce",
+   "Irreplaceable",
+   ""
+  ],
+  [
+   "2005",
+   "Mariah Carey",
+   "We Belong Together",
+   ""
+  ],
+  [
+   "2004",
+   "Usher",
+   "Yeah!",
+   ""
+  ],
+  [
+   "2003",
+   "OutKast",
+   "Hey Ya!",
+   "Speakerboxx/The Love Below - Arista 50133"
+  ],
+  [
+   "2002",
+   "Eminem",
+   "Lose Yourself",
+   "8 Mile (Soundtrack) - Shady 493508"
+  ],
+  [
+   "2001",
+   "Janet",
+   "All For You",
+   ""
+  ],
+  [
+   "2000",
+   "Destiny's Child",
+   "Independent Women Part I",
+   "Survivor"
+  ],
+  [
+   "1999",
+   "Santana",
+   "Smooth",
+   "Supernatural - Arista 19081"
+  ],
+  [
+   "1998",
+   "Brandy & Monica",
+   "The Boy Is Mine",
+   ""
+  ],
+  [
+   "1997",
+   "Elton John",
+   "Candle In The Wind",
+   ""
+  ],
+  [
+   "1996",
+   "Los Del Rio",
+   "Macarena (Bayside Boys Mix)",
+   ""
+  ],
+  [
+   "1995",
+   "Mariah Carey",
+   "One Sweet Day",
+   ""
+  ],
+  [
+   "1994",
+   "Boyz II Men",
+   "I'll Make Love To You",
+   ""
+  ],
+  [
+   "1993",
+   "Mariah Carey",
+   "Dreamlover",
+   "Music Box"
+  ],
+  [
+   "1992",
+   "Whitney Houston",
+   "I Will Always Love You",
+   "The Bodyguard"
+  ],
+  [
+   "1991",
+   "Bryan Adams",
+   "(Everything I Do) I Do It For You",
+   "Robin Hood: Prince Of Thieves (Soundtrack) - Morgan Creek 20004"
+  ],
+  [
+   "1990",
+   "Stevie B",
+   "Because I Love You (The Postman Song)",
+   "Love & Emotion"
+  ],
+  [
+   "1989",
+   "Phil Collins",
+   "Another Day In Paradise",
+   "…But Seriously - Atlantic 82050"
+  ],
+  [
+   "1988",
+   "Steve Winwood",
+   "Roll With It",
+   "Roll With It - Virgin 90946"
+  ],
+  [
+   "1987",
+   "George Michael",
+   "Faith",
+   ""
+  ],
+  [
+   "1986",
+   "Dionne & Friends",
+   "That's What Friends Are For",
+   "Friends"
+  ],
+  [
+   "1985",
+   "Lionel Richie",
+   "Say You, Say Me",
+   "White Knights (Soundtrack) - Atlantic 81273"
+  ],
+  [
+   "1984",
+   "Madonna",
+   "Like A Virgin",
+   "Like a Virgin"
+  ],
+  [
+   "1983",
+   "Police, The",
+   "Every Breath You Take",
+   "Synchronicity - A&M 3735"
+  ],
+  [
+   "1982",
+   "Joan Jett & The Blackhearts",
+   "I Love Rock 'N Roll",
+   "Love Rock 'N Roll - Boardwalk NB1-33243"
+  ],
+  [
+   "1981",
+   "Olivia Newton-John",
+   "Physical",
+   ""
+  ],
+  [
+   "1980",
+   "Kenny Rogers",
+   "Lady",
+   "Greatest Hits - Liberty 46004"
+  ],
+  [
+   "1979",
+   "Knack, The",
+   "My Sharona",
+   "Get The Knack - Capitol SO-11948"
+  ],
+  [
+   "1978",
+   "Bee Gees",
+   "Night Fever",
+   "Saturday Night Fever"
+  ],
+  [
+   "1977",
+   "Debby Boone",
+   "You Light Up My Life",
+   ""
+  ],
+  [
+   "1976",
+   "Rod Stewart",
+   "Tonight's The Night (Gonna Be Alright)",
+   "A Night On The Town - Warner 2938"
+  ],
+  [
+   "1975",
+   "Captain and Tennille, The",
+   "Love Will Keep Us Together",
+   "Love Will Keep Us Together - A&M SP-3405"
+  ],
+  [
+   "1974",
+   "Barbra Streisand",
+   "The Way We Were",
+   "The Way We Were"
+  ],
+  [
+   "1973",
+   "Roberta Flack",
+   "Killing Me Softly With His Song",
+   "Killing Me Softly"
+  ],
+  [
+   "1972",
+   "Roberta Flack",
+   "The First Time Ever I Saw Your Face",
+   "First Take - Atlantic 8230"
+  ],
+  [
+   "1971",
+   "Three Dog Night",
+   "Joy To The World",
+   "Naturally - Dunhill/ABC 50088"
+  ],
+  [
+   "1970",
+   "Simon and Garfunkel",
+   "Bridge Over Troubled Water",
+   "Bridge Over Troubled Water - Columbia 9914"
+  ],
+  [
+   "1969",
+   "5th Dimension, The",
+   "Aquarius/Let The Sunshine In (The Flesh Failures)",
+   "The Age Of Aquarius (Soul SCS-92005)"
+  ],
+  [
+   "1968",
+   "Beatles, The",
+   "Hey Jude",
+   ""
+  ],
+  [
+   "1967",
+   "Lulu",
+   "To Sir With Love",
+   "Love Loves to Love Lulu"
+  ],
+  [
+   "1966",
+   "Monkees, The",
+   "I'm A Believer",
+   ""
+  ],
+  [
+   "1965",
+   "Rolling Stones, The",
+   "(I Can't Get No) Satisfaction",
+   "Out Of Our Heads - London 429"
+  ],
+  [
+   "1964",
+   "Beatles, The",
+   "I Want To Hold Your Hand",
+   "Meet The Beatles! - Capitol 2047"
+  ],
+  [
+   "1963",
+   "Jimmy Gilmer",
+   "Sugar Shack",
+   ""
+  ],
+  [
+   "1962",
+   "Ray Charles",
+   "I Can't Stop Loving You",
+   "Modern Sounds in Country and Western Music"
+  ],
+  [
+   "1961",
+   "Bobby Lewis",
+   "Tossin' And Turnin'",
+   "Tossin' & Turnin'"
+  ],
+  [
+   "1960",
+   "Percy Faith",
+   "The Theme From \"A Summer Place\"",
+   ""
+  ],
+  [
+   "1959",
+   "Bobby Darin",
+   "Mack The Knife",
+   "That's All"
+  ],
+  [
+   "1958",
+   "Danny & The Juniors",
+   "At The Hop",
+   ""
+  ],
+  [
+   "1957",
+   "Elvis Presley",
+   "All Shook Up",
+   ""
+  ],
+  [
+   "1956",
+   "Elvis Presley",
+   "Don't Be Cruel",
+   ""
+  ],
+  [
+   "1955",
+   "Perez Prado and His Orchestra",
+   "Cherry Pink And Apple Blossom White",
+   ""
+  ],
+  [
+   "1954",
+   "Kitty Kallen",
+   "Little Things Mean A Lot",
+   ""
+  ],
+  [
+   "1953",
+   "Les Paul & Mary Ford",
+   "Vaya Con Dios (May God Be With You)",
+   ""
+  ],
+  [
+   "1952",
+   "Jo Stafford",
+   "You Belong To Me",
+   ""
+  ],
+  [
+   "1951",
+   "Johnnie Ray & Four Lads",
+   "Cry",
+   ""
+  ],
+  [
+   "1950",
+   "Patti Page",
+   "The Tennessee Waltz",
+   ""
+  ],
+  [
+   "1949",
+   "Vaughn Monroe & His Orchestra",
+   "Riders in the Sky (A Cowboy Legend)",
+   ""
+  ],
+  [
+   "1948",
+   "Dinah Shore",
+   "Buttons and Bows",
+   ""
+  ],
+  [
+   "1947",
+   "Francis Craig & His Orchestra",
+   "Near You",
+   ""
+  ],
+  [
+   "1946",
+   "Ink Spots",
+   "The Gypsy",
+   ""
+  ],
+  [
+   "1945",
+   "Andrews Sisters",
+   "Rum and Coca-Cola",
+   ""
+  ],
+  [
+   "1944",
+   "Bing Crosby",
+   "Swinging On A Star",
+   ""
+  ],
+  [
+   "1943",
+   "Harry James & His Orchestra",
+   "I've Heard That Song Before",
+   ""
+  ],
+  [
+   "1942",
+   "Bing Crosby",
+   "White Christmas",
+   ""
+  ],
+  [
+   "1941",
+   "Jimmy Dorsey & His Orchestra (Vocal Bob Eberle & Helen O'connell)",
+   "Amapola",
+   ""
+  ],
+  [
+   "1940",
+   "Artie Shaw & His Orchestra",
+   "Frenesi",
+   ""
+  ],
+  [
+   "1939",
+   "Larry Clinton & His Orchestra",
+   "Deep Purple",
+   ""
+  ],
+  [
+   "1938",
+   "Ella Fitzgerald (Chick Webb Orchestra)",
+   "A-Tisket, A-Tasket",
+   ""
+  ],
+  [
+   "1937",
+   "Bing Crosby",
+   "Sweet Leilani",
+   ""
+  ],
+  [
+   "1936",
+   "Bing Crosby",
+   "Pennies from Heaven",
+   ""
+  ],
+  [
+   "1935",
+   "Fred Astaire",
+   "Cheek To Cheek",
+   ""
+  ],
+  [
+   "1934",
+   "Bing Crosby",
+   "June In January",
+   ""
+  ],
+  [
+   "1933",
+   "George Olsen & His Orchestra",
+   "The Last Round-Up",
+   ""
+  ],
+  [
+   "1932",
+   "Ted Lewis & His Band",
+   "In A Shanty In Old Shanty Town",
+   ""
+  ],
+  [
+   "1931",
+   "Don Azpiazu & His Havana Casino Orchestra",
+   "The Peanut Vendor",
+   ""
+  ],
+  [
+   "1930",
+   "Rudy Vallee & His Connecticut Yankees",
+   "Stein Song (University of Maine)",
+   ""
+  ],
+  [
+   "1929",
+   "Nick Lucas",
+   "Tip Toe Through the Tulips",
+   ""
+  ],
+  [
+   "1928",
+   "Al Jolson",
+   "Sonny Boy",
+   ""
+  ],
+  [
+   "1927",
+   "Gene Austin",
+   "My Blue Heaven",
+   ""
+  ],
+  [
+   "1926",
+   "Paul Whiteman & His Orchestra",
+   "Valencia",
+   ""
+  ],
+  [
+   "1925",
+   "Gene Austin",
+   "Yes Sir! That's My Baby",
+   ""
+  ],
+  [
+   "1924",
+   "Wendell Hall",
+   "It Ain't Gonna Rain No Mo'",
+   ""
+  ],
+  [
+   "1923",
+   "Paul Whiteman & His Orchestra",
+   "Parade of the Wooden Soldiers",
+   ""
+  ],
+  [
+   "1922",
+   "Al Jolson",
+   "April Showers",
+   ""
+  ],
+  [
+   "1921",
+   "Paul Whiteman & His Orchestra",
+   "Wang Wang Blues",
+   ""
+  ],
+  [
+   "1920",
+   "Ben Selvin & His Orchestra",
+   "Dardanella",
+   ""
+  ],
+  [
+   "1919",
+   "Henry Burr & Albert Campbell",
+   "Till We Meet Again",
+   ""
+  ],
+  [
+   "1918",
+   "Henry Burr",
+   "Just a Baby's Prayer at Twilight (For Her Daddy Over There)",
+   ""
+  ],
+  [
+   "1917",
+   "American Quartet",
+   "Over There",
+   ""
+  ],
+  [
+   "1916",
+   "Henry Burr",
+   "M-O-T-H-E-R (A Word That Means the World to Me)",
+   ""
+  ],
+  [
+   "1915",
+   "John McCormack",
+   "It's a Long, Long Way to Tipperary",
+   ""
+  ],
+  [
+   "1914",
+   "Henry Burr",
+   "The Song That Stole My Heart Away",
+   ""
+  ],
+  [
+   "1913",
+   "Chauncey Olcott",
+   "When Irish Eyes Are Smiling",
+   ""
+  ],
+  [
+   "1912",
+   "American Quartet",
+   "Moonlight Bay",
+   ""
+  ],
+  [
+   "1911",
+   "Arthur Collins & Byron Harlan",
+   "Alexander's Ragtime Band",
+   ""
+  ],
+  [
+   "1910",
+   "American Quartet & Billy Murray",
+   "Casey Jones",
+   ""
+  ],
+  [
+   "1909",
+   "Haydn Quartet",
+   "Put on Your Old Gray Bonnet",
+   ""
+  ],
+  [
+   "1908",
+   "Haydn Quartet with Harry MacDonough",
+   "Take Me Out to the Ball Game",
+   ""
+  ],
+  [
+   "1907",
+   "Byron G. Harlan",
+   "School Days (When We Were a Couple of Kids)",
+   ""
+  ],
+  [
+   "1906",
+   "Billy Murray",
+   "The Grand Old Rag",
+   ""
+  ],
+  [
+   "1905",
+   "Arthur Collins",
+   "The Preacher and the Bear",
+   ""
+  ],
+  [
+   "1904",
+   "Haydn Quartet",
+   "Sweet Adeline (You're the Flower of My Heart)",
+   ""
+  ],
+  [
+   "1903",
+   "Haydn Quartet",
+   "In the Good Old Summer Time",
+   ""
+  ],
+  [
+   "1902",
+   "Len Spencer",
+   "Arkansaw Traveler (new version)",
+   ""
+  ],
+  [
+   "1901",
+   "Albert Campbell",
+   "Ma Blushin' Rosie",
+   ""
+  ],
+  [
+   "1900",
+   "George J. Gaskin",
+   "When You Were Sweet Sixteen",
+   ""
+  ],
+  [
+   "1899",
+   "Arthur Collins",
+   "I'd Leave My Happy Home for You",
+   ""
+  ],
+  [
+   "1898",
+   "George J. Gaskin",
+   "My Old New Hampshire Home",
+   ""
+  ],
+  [
+   "1897",
+   "George J. Gaskin",
+   "On the Banks of the Wabash",
+   ""
+  ],
+  [
+   "1896",
+   "Dan Quinn",
+   "A Hot Time in the Old Town",
+   ""
+  ],
+  [
+   "1895",
+   "Dan Quinn",
+   "The Band Played On",
+   ""
+  ],
+  [
+   "1894",
+   "Edward M. Favor",
+   "Say Au Revoir, but Not Goodbye",
+   ""
+  ],
+  [
+   "1893",
+   "George J. Gaskin",
+   "After the Ball",
+   ""
+  ],
+  [
+   "1892",
+   "Len Spencer",
+   "Ta-Ra-Ra-Boom Der E",
+   ""
+  ],
+  [
+   "1891",
+   "George Washington Johnson",
+   "The Laughing Song",
+   ""
+  ],
+  [
+   "1890",
+   "U.S. Marine Band",
+   "Semper Fidelis",
+   ""
+  ]
+ ]
+}
