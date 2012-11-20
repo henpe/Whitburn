@@ -71,9 +71,9 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     // Loop through data
     var data = [];
     this.collection.each(function(track) {
-      //console.log('x', track.get('audio_summary'));
       var hotness = track.get('song_hotttnesss'),
           summary = track.get('audio_summary');
+
       if (!hotness) return;
       var pX = (param_x.indexOf('summary.') !== -1) ? summary[param_x.split('summary.')[1]] : track.get(param_x),
           pY = (param_y.indexOf('summary.') !== -1) ? summary[param_y.split('summary.')[1]] : track.get(param_y),
@@ -86,6 +86,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         y: pY,
         size: pSize,
         color: pColour,
+        visible: true,
         name: track.get('name'),
         year: track.get('year').getFullYear()
       });
@@ -122,8 +123,8 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         .data(data)
       .enter().append("circle")
         .attr("class", "dot")
-        //.attr("id", function(d) { return d.id; })
-        .attr("id", function(d) { return 'year-' + d.year; })
+        .attr("id", function(d) { return d.id; })
+        //.attr("id", function(d) { return 'year-' + d.year; })
         .attr("r", function(d) { return size(d.size); })
         .attr("title", function(d) { return d.name; })
         .attr("cx", function(d) { return x(d.x); })
@@ -134,16 +135,17 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
   updateYear: function(year) {
     if (this.currentYear !== year) {
       var currentTrack = this.collection.find(function(track){
-        return (track.get('year').getFullYear() === parseInt(year));
+        //console.log('track', track.id);
+        return (track.get('year').getFullYear() === parseInt(year, 10));
       });
       
-      console.log(currentTrack);
+      //console.log(d3.select('circle.dot').attr('id'), currentTrack);
       this.$el.find('.artist').text(currentTrack.get('artist'));
       this.$el.find('.track-name').text(currentTrack.get('name'));
       //this.$el.find('.year').text(year);
 
-      d3.select('circle#year-' + this.currentYear).attr('class', 'dot');
-      d3.select('circle#year-1996' + year).attr('class', 'dot active');
+      d3.select('.active').attr('class', 'dot');
+      d3.select('#' + currentTrack.id).attr('class', 'dot active');
       this.currentYear = year;
     };
   }
