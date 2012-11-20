@@ -2,3 +2,7 @@
 .npmignore
 *.pyc
 app/.DS_Store
+tools/_lib/cachetmp/*
+tools/input/*
+tools/output/*
+proxy/cachetmp/*
