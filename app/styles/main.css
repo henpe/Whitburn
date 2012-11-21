@@ -26,8 +26,8 @@ body {
 }
 
 #toolbar {
-  background:#888;
-  height: 50px;
+  height: 20px;
+  padding: 10px;
   width:100%;
 }
 #plot {
@@ -58,26 +58,20 @@ body {
 
 /* Toolbar */
 #toolbar {
-  color:#eee;
+  background: #eee;
+  color:#444;
   text-align: center;
-}
-#toolbar h2 {
-  margin:0 10px 0 0;
-  padding:0;
-  color:#999;
-  font-size: 16px
+  border-bottom:1px solid #ccc;
 }
 #toolbar .filters {
-  position: absolute;
-  top:15px;
-  left:10px;
+ 
 }
-#toolbar .filters h2,
 #toolbar .filters div {
   display: inline-block;
+  margin-right:10px;
 }
 #toolbar .filters label {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* Plot */
