@@ -2,13 +2,14 @@
     include('_lib/utils.php');
     include('_lib/track.php');
 
-    $capsuleLengthInSecs = 5;
+    $capsuleLengthInSecs = 3;
 
     $hitlistData = json_decode(file_get_contents('hitlist.json'), true);
     $hitlist = $hitlistData['rows'];
     //$hitlist = array_splice($hitlist, 0, 6);
 
     $audioFileList = array();
+    $allTrackData = array();
 
     /*
      * STEP 1 : Download preview files
@@ -36,9 +37,13 @@
             $audioFileList[] = $filename;
         }
 
+        $allTrackData[$year] = $track->getEchoNestData();
+
         echo "\n";
     }
 
+
+    file_put_contents('trackdata.json', json_encode($allTrackData));
 
 
     /*
