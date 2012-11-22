@@ -213,7 +213,9 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
   },
 
   onClick: function(e) {
-    console.log("onclick", e);
+    if (e.id) {
+      app.router.navigate(e.id, {trigger: true});
+    }
   }
 
 });
