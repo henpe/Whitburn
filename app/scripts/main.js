@@ -17,6 +17,9 @@ window.whitburn = {
 
     app.model = new whitburn.Models.Application();
     app.view = new whitburn.Views.Application({model: app.model, el: '#app'});
+    app.router = new whitburn.Routers.Application({model: app.model});
+
+    Backbone.history.start();
   }
 };
 

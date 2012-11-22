@@ -3,13 +3,31 @@ body {
   font-size:12px;
   margin:0;
   padding:0;
-  background:#eee url(../images/billie_holiday.png) repeat 0 0;
+  /*background:#eee url(../images/billie_holiday.png) repeat 0 0;*/
 }
 
 /* Layout */
+#main {
+  position: fixed;
+  top: 0;
+  right: 350px;
+  bottom: 0;
+  left: 0;
+}
+
+#sidebar {
+  /*background:#555 url(../images/otis_redding.png) repeat 0 0;*/
+  background:#ccc;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 350px;
+}
+
 #toolbar {
-  background:#555 url(../images/diagmonds.png) repeat 0 0;
-  height: 50px;
+  height: 20px;
+  padding: 10px;
   width:100%;
 }
 #plot {
@@ -20,70 +38,43 @@ body {
   bottom:50px;
 }
 #player {
-  background:#555 url(../images/diagmonds.png) repeat 0 0;
+  background:#888;
   height: 50px;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 }
-#player .slider {
-    margin: 20px 10px;
-    width: 85%;
-    float: left;
-}
-#player .soundcloud-container {
-    position: absolute;
-    top: 0;
-    left: -1000px;
-}
-#player .play-pause {
-    width: 40px;
-    height: 40px;
-    background: transparent url(../images/play.png) no-repeat 0 0;
-    margin: 4px;
-    float: left;
-}
-#player.playing .play-pause {
-    background: transparent url(../images/pause.png) no-repeat 0 0;
-}
-#player .year {
-    float: right;
-    color: orange;
-    margin-right: 20px
-}
 
+/* Sidebar panel */
+#sidebar {
+    box-shadow: 10px 0px 15px -10px #666 inset;
+}
+#sidebar h1 {
+  margin:0;
+  padding:0;
+  color:#aaa;
+  font-weight: bold;
+  padding:10px;
+  background:rgba(0,0,0,0.4);
+}
 
 /* Toolbar */
 #toolbar {
-  color:#eee;
-}
-#toolbar h1 {
-  margin:0;
-  padding:0;
-  color:#666;
-  font-weight: bold;
-  position: absolute;
-  right:10px;
-  top:10px;
-}
-#toolbar h2 {
-  margin:0 10px 0 0;
-  padding:0;
-  color:#999;
-  font-size: 16px
+  background: #eee;
+  color:#444;
+  text-align: center;
+  border-bottom:1px solid #ccc;
 }
 #toolbar .filters {
-  position: absolute;
-  top:15px;
-  left:10px;
+ 
 }
-#toolbar .filters h2,
 #toolbar .filters div {
   display: inline-block;
+  margin-right:10px;
 }
 #toolbar .filters label {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* Plot */
@@ -116,4 +107,31 @@ body {
 }
 .dot {
 
+}
+
+/* Player */
+#player .slider {
+    margin: 20px 10px;
+    width: 85%;
+    float: left;
+}
+#player .soundcloud-container {
+    position: absolute;
+    top: 0;
+    left: -1000px;
+}
+#player .play-pause {
+    width: 40px;
+    height: 40px;
+    background: transparent url(../images/play.png) no-repeat 0 0;
+    margin: 4px;
+    float: left;
+}
+#player.playing .play-pause {
+    background: transparent url(../images/pause.png) no-repeat 0 0;
+}
+#player .year {
+    float: right;
+    color: orange;
+    margin-right: 20px
 }

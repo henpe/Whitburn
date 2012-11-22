@@ -6,3 +6,7 @@ tools/_lib/cachetmp/*
 tools/input/*
 tools/output/*
 proxy/cachetmp/*
+
+*.log
+
+npm-debug.log

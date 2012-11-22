@@ -44,7 +44,7 @@ whitburn.Views.Player = Backbone.View.extend({
   goToYear: function(year) {
       this.currentYear = year;
       this.$('.year').text(year);
-      console.log('going to year '+year);
+      //console.log('going to year '+year);
 
       // Broadcast here
       this.model.trigger('player:year', this.currentYear);
