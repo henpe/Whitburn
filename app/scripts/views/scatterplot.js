@@ -24,11 +24,13 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
   },
 
   renderPlot: function() {
-    var self = this,
-        param_x = this.model.get('param_x') || 'year',
+    var self = this;
+
+    // Parameters
+    var param_x = this.model.get('param_x') || 'date',
         param_y = this.model.get('param_y') || 'no_of_weeks_charted',
-        param_colour = this.model.get('param_colour') || 'song_hotttnesss',
-        param_size = this.model.get('param_size') || 'summary.duration';
+        param_color = this.model.get('param_colour') || 'song_hotttnesss',
+        param_size = this.model.get('param_size') || 'duration';
 
     // Container
     var containerHeight = this.$el.height();
@@ -60,35 +62,46 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
                   .scale(this.yScale)
                   .orient("left");
 
-    // Loop through data
+    // Create data array
     this.data = [];
-    this.collection.each(function(track) {
-      var hotness = track.get('song_hotttnesss'),
-          summary = track.get('audio_summary');
-
-      if (!hotness) return;
-      var pX = (param_x.indexOf('summary.') !== -1) ? summary[param_x.split('summary.')[1]] : track.get(param_x),
-          pY = (param_y.indexOf('summary.') !== -1) ? summary[param_y.split('summary.')[1]] : track.get(param_y),
-          pColour = (param_colour.indexOf('summary.') !== -1) ? summary[param_colour.split('summary.')[1]] : track.get(param_colour);
-          pSize = (param_size.indexOf('summary.') !== -1) ? summary[param_size.split('summary.')[1]] : track.get(param_size);
-
-      self.data.push({
-        id: track.get('id'),
-        x: pX,
-        y: pY,
-        size: pSize,
-        color: pColour,
+    this.collection.each(function(model) {
+      if (!model.get('id')) return;
+      
+      // Copy track properties
+      var track = {
+        id: model.get('id'),
+        name: model.get('name'),
+        artist: model.get('artist_name'),
+        date: model.get('year'),
+        no_of_weeks_charted: parseInt(model.get('no_of_weeks_charted'), 10),
+        song_hotttnesss: model.get('song_hotttnesss'),
         visible: true,
-        name: track.get('name'),
-        year: track.get('year').getFullYear()
-      });
+        year: model.get('year').getFullYear()
+      };
+
+      // Copy audio summary properties
+      var summary = model.get('audio_summary');
+      if (summary) {
+        track.danceability = summary.danceability;
+        track.duration = summary.duration;
+        track.energy = summary.energy;
+        track.key = summary.key;
+        track.liveness = summary.liveness;
+        track.loudness = summary.loudness;
+        track.mode = summary.mode;
+        track.speechiness = summary.speechiness;
+        track.tempo = summary.tempo;
+        track.time_signature = summary.time_signature;
+      }
+
+      self.data.push(track);
     });
 
     // Set scale domains
-    this.xScale.domain(d3.extent(this.data, function(d) { return d.x; })).nice();
-    this.yScale.domain(d3.extent(this.data, function(d) { return d.y; })).nice();
-    this.colorScale.domain(d3.extent(this.data, function(d) { return d.color; })).nice();
-    this.sizeScale.domain(d3.extent(this.data, function(d) { return d.size; })).nice();
+    this.xScale.domain(d3.extent(this.data, function(d) { return d[param_x]; })).nice();
+    this.yScale.domain(d3.extent(this.data, function(d) { return d[param_y]; })).nice();
+    this.colorScale.domain(d3.extent(this.data, function(d) { return d[param_color]; })).nice();
+    this.sizeScale.domain(d3.extent(this.data, function(d) { return d[param_size]; })).nice();
 
     // Create x-axis
     this.svg.append("g")
@@ -120,34 +133,24 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         .attr("class", "dot")
         .attr("id", function(d) { return d.id; })
         //.attr("id", function(d) { return 'year-' + d.year; })
-        .attr("r", function(d) { return self.sizeScale(d.size); })
+        .attr("r", function(d) { return self.sizeScale(d[param_size]); })
         .attr("title", function(d) { return d.name; })
-        .attr("cx", function(d) { return self.xScale(d.x); })
-        .attr("cy", function(d) { return self.yScale(d.y); })
-        .style("fill", function(d) { return self.colorScale(d.color); });
+        .attr("cx", function(d) { return self.xScale(d[param_x]); })
+        .attr("cy", function(d) { return self.yScale(d[param_y]); })
+        .style("fill", function(d) { return self.colorScale(d[param_color]); });
   },
 
   changeY: function() {
     var self = this,
         param_y = this.model.get('param_y');
 
-    // Loop through data
-    _.each(this.data, function(item, index) {
-      var track = self.collection.get(item.id);
-      if (track) {
-        var summary = track.get('audio_summary');
-        var pY = (param_y.indexOf('summary.') !== -1) ? summary[param_y.split('summary.')[1]] : track.get(param_y);
-        self.data[index].y = pY;
-      }
-    });
-
-    this.yScale.domain(d3.extent(this.data, function(d) { return d.y; })).nice();
+    this.yScale.domain(d3.extent(this.data, function(d) { return d[param_y]; })).nice();
 
     this.svg.selectAll('.dot')
       .transition()
       .ease('linear')
       .duration(1000)
-      .attr("cy", function(d) { return self.yScale(d.y); });
+      .attr("cy", function(d) { return self.yScale(d[param_y]); });
 
     this.svg.selectAll('.y')
         .transition()
@@ -158,48 +161,28 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
 
   changeColour: function() {
     var self = this,
-        param_colour = this.model.get('param_colour');
+        param_color = this.model.get('param_colour');
 
-    // Loop through data
-    _.each(this.data, function(item, index) {
-      var track = self.collection.get(item.id);
-      if (track) {
-        var summary = track.get('audio_summary');
-        var pColour = (param_colour.indexOf('summary.') !== -1) ? summary[param_colour.split('summary.')[1]] : track.get(param_colour);
-        self.data[index].color = pColour;
-      }
-    });
-
-    this.colorScale.domain(d3.extent(this.data, function(d) { return d.color; })).nice();
+    this.colorScale.domain(d3.extent(this.data, function(d) { return d[param_color]; })).nice();
 
     this.svg.selectAll('.dot')
       .transition()
       .ease('linear')
       .duration(500)
-      .style("fill", function(d) { return self.colorScale(d.color); });
+      .style("fill", function(d) { return self.colorScale(d[param_color]); });
   },
 
   changeSize: function() {
     var self = this,
         param_size = this.model.get('param_size');
 
-    // Loop through data
-    _.each(this.data, function(item, index) {
-      var track = self.collection.get(item.id);
-      if (track) {
-        var summary = track.get('audio_summary');
-        var pSize = (param_size.indexOf('summary.') !== -1) ? summary[param_size.split('summary.')[1]] : track.get(param_size);
-        self.data[index].size = pSize;
-      }
-    });
-
-    this.sizeScale.domain(d3.extent(this.data, function(d) { return d.size; })).nice();
+    this.sizeScale.domain(d3.extent(this.data, function(d) { return d[param_size]; })).nice();
 
     this.svg.selectAll('.dot')
       .transition()
       .ease('linear')
       .duration(500)
-      .attr("r", function(d) { return self.sizeScale(d.size); });
+      .attr("r", function(d) { return self.sizeScale(d[param_size]); });
   },
 
   updateYear: function(year) {
