@@ -3,7 +3,15 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
   template: new EJS({url: 'scripts/templates/scatterplot.ejs'}),
 
   initialize: function() {
-    _.bindAll(this, 'render', 'renderPlot', 'updatePlot', 'changeY', 'changeColour', 'changeSize');
+    _.bindAll(this,
+      'render',
+      'renderPlot',
+      'updatePlot',
+      'changeY',
+      'changeColour',
+      'changeSize',
+      'onClick'
+    );
 
     this.currentYear = '1890'; // Shouldn't be hardcoded
 
@@ -37,7 +45,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         containerWidth = this.$el.width();
 
     // Dimensions
-    var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    var margin = {top: 40, right: 40, bottom: 40, left: 50},
         width = containerWidth - margin.left - margin.right,
         height = containerHeight - margin.top - margin.bottom;
 
@@ -137,7 +145,8 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         .attr("title", function(d) { return d.name; })
         .attr("cx", function(d) { return self.xScale(d[param_x]); })
         .attr("cy", function(d) { return self.yScale(d[param_y]); })
-        .style("fill", function(d) { return self.colorScale(d[param_color]); });
+        .style("fill", function(d) { return self.colorScale(d[param_color]); })
+      .on("click", this.onClick);
   },
 
   changeY: function() {
@@ -201,6 +210,10 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
       d3.select('#' + currentTrack.id).attr('class', 'dot active');
       this.currentYear = year;
     }
+  },
+
+  onClick: function(e) {
+    console.log("onclick", e);
   }
 
 });

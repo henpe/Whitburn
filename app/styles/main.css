@@ -103,10 +103,10 @@ body {
   stroke:none;
 }
 .dot.active {
-  fill: #0f0 !important;
+  fill: #0f0;
 }
 .dot {
-
+  cursor: pointer;
 }
 
 /* Player */
