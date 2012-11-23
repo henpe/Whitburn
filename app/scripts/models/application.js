@@ -9,7 +9,9 @@ whitburn.Models.Application = Backbone.Model.extend({
         dataType: 'jsonp',
         data: {
           key: app.FUSION_KEY,
-          sql: 'SELECT Year, Artist, Track, Album, Time, CH FROM ' + app.FUSION_TABLE
+          sql: "SELECT Year, Artist, Track, Album, 'Yearly Rank', Time, CH, 'Date Entered', 'Date Peaked' FROM " + app.FUSION_TABLE + " " +
+               "WHERE 'Yearly Rank' >= 1 AND 'Yearly Rank' <= 3 " +
+               "ORDER BY Year"
         },
         success: function(data) {
           var tracks = [];
@@ -19,8 +21,11 @@ whitburn.Models.Application = Backbone.Model.extend({
               artist: row[1],
               name: row[2],
               album: row[3],
-              duration: row[4],
-              no_of_weeks_charted: row[5]
+              rank: row[4],
+              time: row[5],
+              no_of_weeks_charted: row[6],
+              date_entered: row[7],
+              date_peaked: row[8]
             });
           });
           self.set('tracks', new app.Collections.Tracks(tracks));
