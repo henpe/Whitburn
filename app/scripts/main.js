@@ -6,6 +6,7 @@ window.whitburn = {
   ECHONEST_API: 'http://developer.echonest.com/api/v4',
   ECHONEST_KEY: 'ZUDBPBLHIZ8VN23BR',
   ECHONEST_PROXY: 'http://www.deepcobalt.com/labs/whitburn/proxy/?url=',
+  SEVENDIGITAL_KEY: '7d8p87g5dz8g',
 
   Models: {},
   Collections: {},
