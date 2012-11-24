@@ -60,7 +60,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     this.xScale = d3.time.scale().range([0, width]);
     this.yScale = d3.scale.linear().range([height, 0]);
     this.colorScale = d3.scale.linear().range(["blue", "red"]);
-    this.sizeScale = d3.scale.linear().range([5, 15]);
+    this.sizeScale = d3.scale.linear().range([3, 10]);
 
     // Axes
     this.xAxis = d3.svg.axis()

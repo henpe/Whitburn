@@ -14,6 +14,7 @@ whitburn.Views.Toolbar = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template.render());
+    this.$el.find('select').select2();
 
     return this.$el;
   },
