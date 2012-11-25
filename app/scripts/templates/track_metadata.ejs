@@ -1,0 +1,18 @@
+<p>Released <span class="track-year"><%= year %></span></p>
+<p>Yearly rank: <span class="track-rank"><%= rank %></span></p>
+<div class="section">
+	<table class="track-audio-summary">
+		<tr>
+			<th>Key</th>
+			<th>Mode</th>
+			<th>Tempo</th>
+			<th>Time signature</th>
+		</tr>
+		<tr>
+			<td><%= audio_summary.key.label %></td>
+			<td><%= audio_summary.mode.label %></td>
+			<td><%= audio_summary.tempo %> BPM</td>
+			<td><%= audio_summary.time_signature %> beats per measure</td>
+		</tr>
+	</table>
+</div>
