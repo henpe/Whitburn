@@ -4,16 +4,8 @@ whitburn.Views.Application = Backbone.View.extend({
 
   initialize: function() {
     var self = this;
-    _.bindAll(this, 'render', 'setup');
+    _.bindAll(this, 'render', 'setup', 'show');
 
-    // Bind to model events
-    this.model.fetchTracks().done(function() {
-      console.log("fetch tracks", self.model.get('tracks'));
-      self.setup();
-    });
-  },
-
-  setup: function() {
     this.$el.html(this.template.render());
 
     // Create child views
@@ -23,7 +15,7 @@ whitburn.Views.Application = Backbone.View.extend({
       sidebar: new whitburn.Views.Sidebar({el: '#sidebar', model: this.model}),
       toolbar: new whitburn.Views.Toolbar({el: '#toolbar', model: this.model}),
       scatterPlot: new whitburn.Views.ScatterPlot({el: '#plot', model: this.model, collection: this.model.get('tracks')}),
-      player:      new whitburn.Views.Player({el: '#player', model: this.model, collection: playerTracksCollection })
+      player: new whitburn.Views.Player({el: '#player', model: this.model, collection: playerTracksCollection })
     };
 
     this.render();
@@ -36,6 +28,14 @@ whitburn.Views.Application = Backbone.View.extend({
     _.each(this.views, function(view) {
       view.render();
     });
+  },
+
+  show: function(route, id) {
+    if (route === "track" && id) {
+      this.views.sidebar.show('track');
+    } else {
+      this.views.sidebar.show('home');
+    }
   }
 
 });

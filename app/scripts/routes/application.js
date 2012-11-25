@@ -7,14 +7,16 @@ whitburn.Routers.Application = Backbone.Router.extend({
 
     initialize: function(options) {
       if (options.model) { this.model = options.model; }
+      if (options.view) { this.view = options.view; }
     },
 
     home: function() {
       console.debug('Route: Home', this.model);
+      this.view.show("home");
     },
 
     track: function(id) {
-      console.debug('Route: Track', this.model);
-      this.model.set('currentTrack', id);
+      console.debug('Route: Track', id);
+      this.view.show("track", id);
     }
 });
