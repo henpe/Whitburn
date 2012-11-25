@@ -17,6 +17,7 @@ whitburn.Routers.Application = Backbone.Router.extend({
 
     track: function(id) {
       console.debug('Route: Track', id);
+      this.model.set('currentTrack', id);
       this.view.show("track", id);
     }
 });
