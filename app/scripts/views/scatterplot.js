@@ -13,8 +13,6 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
       'onClick'
     );
 
-    this.currentYear = '1890'; // Shouldn't be hardcoded
-
     this.model.bind('change:param_x', this.render);
     this.model.bind('change:param_y', this.changeY);
     this.model.bind('change:param_colour', this.changeColour);
@@ -61,6 +59,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     this.yScale = d3.scale.linear().range([height, 0]);
     this.colorScale = d3.scale.linear().range(["blue", "red"]);
     this.sizeScale = d3.scale.linear().range([3, 10]);
+    this.chromaticScale = d3.scale.ordinal().range(['C', 'D&#9837;', 'D', 'E&#9837;', 'E', 'F', 'G&#9837;', 'G', 'A&#9837;', 'A', 'B&#9837;', 'B']);
 
     // Axes
     this.xAxis = d3.svg.axis()
@@ -74,17 +73,15 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     this.data = [];
     this.collection.each(function(model) {
       if (!model.get('id')) return;
-      
       // Copy track properties
       var track = {
         id: model.get('id'),
-        name: model.get('name'),
+        name: model.get('title'),
         artist: model.get('artist_name'),
-        date: model.get('year'),
         no_of_weeks_charted: parseInt(model.get('no_of_weeks_charted'), 10),
         song_hotttnesss: model.get('song_hotttnesss'),
         visible: true,
-        year: model.get('year').getFullYear()
+        date: model.get('date_entered')
       };
 
       // Copy audio summary properties
@@ -142,7 +139,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         .attr("id", function(d) { return d.id; })
         //.attr("id", function(d) { return 'year-' + d.year; })
         .attr("r", function(d) { return self.sizeScale(d[param_size]); })
-        .attr("title", function(d) { return d.name; })
+        .attr("title", function(d) { return 'x' + d.name; })
         .attr("cx", function(d) { return self.xScale(d[param_x]); })
         .attr("cy", function(d) { return self.yScale(d[param_y]); })
         .style("fill", function(d) { return self.colorScale(d[param_color]); })
@@ -152,6 +149,11 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
   changeY: function() {
     var self = this,
         param_y = this.model.get('param_y');
+
+    /*if (param_y === 'key') {
+      this.yAxis.scale(this.chromaticScale);
+      this.yScale = this.chromaticScale;
+    }*/
 
     this.yScale.domain(d3.extent(this.data, function(d) { return d[param_y]; })).nice();
 
