@@ -7,6 +7,7 @@
 
             $this->song = $song;
             $this->artist = $artist;
+            $this->year = $year;
 
             $this->get7DigitalTrackID("$artist $song");
         }
@@ -25,9 +26,12 @@
         }
 
         function getEchoNestData() {
-            $response = webGet('http://developer.echonest.com/api/v4/song/profile?track_id=7digital-UK:track:'.$this->trackID7Digital.'&bucket=id:7digital-UK&bucket=song_type&bucket=tracks&bucket=audio_summary&bucket=song_hotttnesss&api_key='.$this->echonestKey);
+            $url = 'http://developer.echonest.com/api/v4/song/profile?track_id=7digital-UK:track:'.$this->trackID7Digital.'&bucket=id:7digital-UK&bucket=tracks&bucket=id:spotify-WW&bucket=song_type&bucket=audio_summary&bucket=song_hotttnesss&api_key='.$this->echonestKey;
+            $response = webGet($url, '+2 days');
             $response = json_decode($response, true);
-            $this->trackData = $response['response']['songs'];
+            $this->trackData = $response['response']['songs'][0];
+            $this->trackData['year'] = $this->year;
+            //$this->trackData['api_request'] = $url;
             return $this->trackData;
         }
 

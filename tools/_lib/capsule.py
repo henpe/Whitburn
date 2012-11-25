@@ -99,12 +99,14 @@ def main():
     verbose = bool(options.verbose)
 
     if verbose:
-        display_actions(actions)
         print "Output Duration = %.3f sec" % sum(act.duration for act in actions)
 
         print "Rendering..."
     # Send to renderer
     render(actions, 'capsule.mp3', verbose)
+
+    display_actions(actions)
+
     return 1
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
     include('_lib/utils.php');
     include('_lib/track.php');
 
-    $capsuleLengthInSecs = 3;
+    $capsuleLengthInSecs = 5;
 
     $hitlistData = json_decode(file_get_contents('hitlist.json'), true);
     $hitlist = $hitlistData['rows'];
@@ -43,8 +43,6 @@
     }
 
 
-    file_put_contents('trackdata.json', json_encode($allTrackData));
-
 
     /*
      * STEP 2: Normalise audio to 44Khz
@@ -71,9 +69,55 @@
      * STEP 3: Mix it all together
      */
     $reverseAudioList = array_reverse($audioFileList);
-    $command = "time /opt/local/bin/python2.7 _lib/capsule.py -i $capsuleLengthInSecs -t $capsuleLengthInSecs ";
+    $command = "time /opt/local/bin/python2.7 _lib/capsule.py -e -i $capsuleLengthInSecs -t $capsuleLengthInSecs ";
     $command .= join(' ', $reverseAudioList);
     $shell = `$command`;
+
+    //echo $command;
+    //echo $shell;
+
+    /*
+     * STEP 4: Create a timed running order
+     */
+    preg_match_all('/<playlist>(.*?)<\/playlist>/s', $shell, $matches);
+    $listing = trim($matches[1][0]);
+    $listing = explode("\n", $listing);
+    $listingJson = array();
+
+    $yearKeys = array_keys($allTrackData);
+
+    $index = 0;
+    foreach ($listing as $entry) {
+        $entry = explode("\t", $entry);
+        $timestamp = trim($entry[1]);
+        $name      = trim($entry[6]);
+        $type      = trim($entry[2]);
+        $type      = strtolower(str_replace(' ', '-', $type));
+
+        $listingJson[] = array(
+            'timestamp' => $timestamp,
+            'type'      => $type,
+            'name'      => $name
+        );
+
+
+        if ($type == 'playback') {
+
+            $currentYear = $yearKeys[$index];
+            $allTrackData[$currentYear]['audio'] = array(
+                'timestamp' => $timestamp,
+                'name'      => $name
+            );
+
+            $index += 1;
+        }
+    }
+
+    //debug($listingJson);
+    //debug($allTrackData);
+
+    file_put_contents('tracks_data.json', json_encode($allTrackData));
+    file_put_contents('tracks_playlist.json', json_encode($listingJson));
 
     rename('capsule.mp3', 'output/mix-'.date('Ymd-Hi').'.mp3');
 
