@@ -2,7 +2,7 @@ whitburn.Routers.Application = Backbone.Router.extend({
 
   routes: {
       '':                 'home',
-      ':track':           'track'
+      'track/:track':     'track'
     },
 
     initialize: function(options) {
