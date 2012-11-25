@@ -1,6 +1,6 @@
 body {
   font-family: 'Arbutus Slab', serif;
-  font-size:12px;
+  font-size:13px;
   margin:0;
   padding:0;
   background-color: #fff;
@@ -85,12 +85,18 @@ body,
   background:rgba(0,0,0,0.3);
 }
 .sidebar h1 {
-  font-size: 18px;
+  font-size: 26px;
   font-weight: bold;
-  margin-top:-5px;
+  line-height: 20px;
+  margin-top:-4px;
+  text-transform: lowercase;
+  font-variant: small-caps;
 }
-.sidebar header span {
-  opacity: 0.8;
+.sidebar h1 span {
+  opacity: 0.7;
+  font-size: 14px;
+  font-style: italic;
+  display: block;
 }
 .sidebar .track {
   padding:5px 15px;
@@ -217,8 +223,8 @@ body,
   line-height: 20px;
 }
 .button:hover {
-  background-color: rgba(255,255,255,0.7);
-  color:#333;
+  background-color: rgba(255,255,255,0.8);
+  color:#222;
 }
 /* Icons */
 .icon {
@@ -230,7 +236,7 @@ body,
 }
 .icon span::before {
   content:"";
-  display: block;
+  display: inline-block;
   position: absolute;
   left:2px;
   top:2px;
@@ -239,7 +245,6 @@ body,
   background-color: transparent;
   background-image: url(../images/icons.png);
   background-repeat: no-repeat;
-  vertical-align: text-top;
 }
 .spotify span::before {
   background-position: 1px 0;
@@ -262,6 +267,7 @@ body,
 
 .no-text span {
   display: block;
+  padding-left: 20px;
   width:0;
   text-indent: -99999px;
 }
