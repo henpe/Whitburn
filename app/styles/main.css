@@ -70,8 +70,8 @@ body,
   padding:0 15px;
 }
 .sidebar footer {
-  height:30px;
-  padding: 10px 15px;
+  height:33px;
+  padding: 7px 15px 10px 15px;
 }
 
 /* Sidebar panel */
@@ -79,10 +79,11 @@ body,
     background-color:#1D1E24;
     color:#999;
     box-shadow: 10px 0px 15px -10px rgba(0,0,0,0.8) inset;
+    text-shadow: 1px 1px 3px #000;
 }
 .sidebar header,
 .sidebar footer {
-  background:rgba(0,0,0,0.3);
+  background:rgba(0,0,0,0.5);
 }
 .sidebar h1 {
   font-size: 26px;
@@ -116,6 +117,46 @@ body,
   right:2px;
 }
 
+/* Siderbar: footer */
+.logos a {
+  display: inline-block;
+  margin-right: 4px;
+  opacity: 0.5;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.logos a:hover {
+  opacity:1;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.logos a:last-child {
+  margin-right: 0;
+}
+.logos a span {
+  display: block;
+  width:0;
+  text-indent: -99999px;
+}
+.logos .echonest {
+  background: transparent url(../images/icons.png) -137px 0 no-repeat;
+  width: 128px;
+  height: 35px;
+}
+.logos .soundcloud {
+  background: transparent url(../images/icons.png) -277px 0 no-repeat;
+  width: 67px;
+  height: 38px;
+}
+.logos .sevendigital {
+  background: transparent url(../images/icons.png) -360px 0 no-repeat;
+  width: 108px;
+  height: 35px;
+}
 /* Toolbar */
 .toolbar {
   background-color: #535663;
@@ -212,8 +253,9 @@ body,
 }
 .button {
   background-color: rgba(255,255,255,0.2);
+  text-shadow: 1px 1px 3px #000;
   color:#aaa;
-  padding:2px 3px;
+  padding:2px 3px 3px 3px;
   border-radius: 4px;
   display: inline-block;
   text-transform: lowercase;
@@ -221,10 +263,20 @@ body,
   font-size: 13px;
   font-weight: bold;
   line-height: 20px;
+
+    -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 .button:hover {
   background-color: rgba(255,255,255,0.8);
+  text-shadow: 1px 1px 3px #fff;
   color:#222;
+
+}
+.button span {
+
 }
 /* Icons */
 .icon {
