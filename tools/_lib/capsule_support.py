@@ -29,8 +29,12 @@ def display_actions(actions):
     total = 0
     print "<playlist>"
     for a in actions:
-        print "%s\t %s\t %s" % (humanize_time(total), round(total,2), unicode(a))
         total += a.duration
+        try:
+            print "%s\t %s\t %s" % (humanize_time(total), round(total, 2), unicode(a))
+        except AttributeError:
+            print "%s\t %s\t NA" % (humanize_time(total), round(total, 2))
+
     print "</playlist>"
 
 def evaluate_distance(mat1, mat2):

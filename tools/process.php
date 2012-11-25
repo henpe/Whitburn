@@ -2,9 +2,9 @@
     include('_lib/utils.php');
     include('_lib/track.php');
 
-    $capsuleLengthInSecs = 5;
+    $capsuleLengthInSecs = 3;  // Final value should be 3
 
-    $hitlistData = json_decode(file_get_contents('hitlist.json'), true);
+    $hitlistData = json_decode(file_get_contents('hitlist_1-3.json'), true);
     $hitlist = $hitlistData['rows'];
     //$hitlist = array_splice($hitlist, 0, 6);
 
@@ -16,28 +16,41 @@
      */
 
     foreach ($hitlist as $track) {
-        $year   = $track[0];
-        $artist = $track[1];
-        $song   = $track[2];
+        $hitData = array(
+            'year'   => intval($track[0]),
+            'artist' => $track[1],
+            'song'   => $track[2],
+            'album'  => $track[3],
+            'yearlyRank' => intval($track[4]),
+            'time'   => $track[5],
+            'ch'     => $track[6],
+            'dateEntered' => $track[7],
+            'datePeaked'  => $track[8]
+        );
 
-        $trackName = "$year: $artist $song ";
+        $trackName = "${hitData['year']}: ${hitData['artist']} ${hitData['song']} ";
         echo $trackName;
 
         // Create clean filename
-        $filename = strtolower("$year-$artist-$song");
+        $filename = strtolower("${hitData['year']}-${hitData['artist']}-${hitData['song']}");
         $filename = preg_replace("/[^a-zA-Z0-9\s\-{P}]/", "", $filename);
         $filename = str_replace(' ', '-', $filename);
         $filename = 'input/'.$filename.'.mp3';
 
-        // Download Audio
-        $track = new Track($song, $artist, $year);
-        $track->downloadPreviewAudio($filename);
+        $track = new Track($hitData['song'], $hitData['artist'], $hitData['year']);
 
-        if (file_exists($filename)) {
-            $audioFileList[] = $filename;
+        // Download Audio - only for the Top track!
+        if ($hitData['yearlyRank'] == 1) {
+            $track->downloadPreviewAudio($filename);
+
+            if (file_exists($filename)) {
+                $audioFileList[] = $filename;
+            }
         }
 
-        $allTrackData[$year] = $track->getEchoNestData();
+        $trackData = $track->getEchoNestData();
+        $trackData = array_merge($trackData, $hitData);
+        $allTrackData[] = $trackData;
 
         echo "\n";
     }
@@ -89,7 +102,7 @@
     $index = 0;
     foreach ($listing as $entry) {
         $entry = explode("\t", $entry);
-        $timestamp = trim($entry[1]);
+        $timestamp = floatval(trim($entry[1]));
         $name      = trim($entry[6]);
         $type      = trim($entry[2]);
         $type      = strtolower(str_replace(' ', '-', $type));
