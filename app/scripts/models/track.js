@@ -4,6 +4,9 @@ whitburn.Models.Track = Backbone.Model.extend({
     isInitialized: false
   },
 
+  mode: ['major', 'minor'],
+  chromaticScale: ['C', 'D&#9837;', 'D', 'E&#9837;', 'E', 'F', 'G&#9837;', 'G', 'A&#9837;', 'A', 'B&#9837;', 'B'],
+
   initialize: function() {
     var self = this;
     if (this.get("name")) {
