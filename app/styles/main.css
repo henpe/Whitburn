@@ -86,10 +86,9 @@ body,
   background:rgba(0,0,0,0.5);
 }
 .sidebar h1 {
-  font-size: 26px;
+  font-size: 25px;
   font-weight: bold;
-  line-height: 20px;
-  margin-top:-4px;
+  line-height: 25px;
   text-transform: lowercase;
   font-variant: small-caps;
 }
@@ -98,6 +97,11 @@ body,
   font-size: 14px;
   font-style: italic;
   display: block;
+  position: absolute;
+  top: 11px;
+  right: 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 8px;
 }
 .sidebar .track {
   padding:5px 15px;
