@@ -15,5 +15,15 @@ whitburn.Views.Sidebar = Backbone.View.extend({
     twttr.widgets.load();
 
     return this.$el;
+  },
+
+  show: function(id) {
+    console.log("dd", id);
+    this.$el.find('.panel.active')
+        .removeClass('active')
+        .hide();
+    this.$el.find('#panel-' + id)
+        .addClass('active')
+        .show();
   }
 });

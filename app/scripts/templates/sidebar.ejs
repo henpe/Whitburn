@@ -1,83 +1,99 @@
 <header>
 	<h1>Remix of the Century <span class="">by <a href="http://www.thudgroup.com/">THUD</a></span></h1>
 </header>
-<div class="track">
-	<h2>
-		<span class="track-name">Track name</span> by <span class="track-artist">Artist</span>
-	</h2>
-	<div class="track-meta">
-		<p class="track-year">Released 1980</p>
-		<div class="track-social">
-			<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-count="none" data-url="http://www.remixofthecentury.com/track/123" data-text="Number 1 1980" data-hashtags="rotc">Tweet</a>
-			<!--a href="" class="facebook">Facebook</a-->
-		</div>
-		<p>Yearly rank: 1</p>
-		<div class="section">
-			<table class="track-audio-summary">
-				<tr>
-					<th>Key</th>
-					<th>Mode</th>
-					<th>Tempo</th>
-					<th>Time signature</th>
-				</tr>
-				<tr>
-					<td>D-flat</td>
-					<td>Minor</td>
-					<td>142</td>
-					<td>4</td>
-				</tr>
-			</table>
-		</div>
-		<div class="section">
-			<table class="track-audio-metrics">
-				<tr>
-					<th>Energy</th>
-					<td class="bar"><span style="width: 80%"></span></td>
-					<td>0.8</td>
-				</tr>
-				<tr>
-					<th>Danceability</th>
-					<td class="bar"><span style="width: 80%"></span></td>
-					<td>0.8</td>
-				</tr>
-				<tr>
-					<th>Liveness</th>
-					<td class="bar"><span style="width: 80%"></span></td>
-					<td>0.8</td>
-				</tr>
-			</table>
-		</div>
+<div class="content">
+	<div id="panel-home" class="panel active">
+		<p>
+			Remix of the Century is a project by <a href="http://www.twitter.com/tomhannen">@tomhannen</a>, <a href="http://www.twitter.com/indeox">@indeox</a>, and <a href="http://www.twitter.com/hpettersson">@hpettersson</a> which aims to explore a century (roughly) of Billboard charts using data from the <a href="http://waxy.org/2008/05/the_whitburn_project/">Whitburn Project</a>.
+		</p>
+		<p>
+			<a href="http://www.echonest.com">The Echonest</a> API is used to augument the chart data with per track audio characteristics like <em>tempo</em>, <em>mode</em>, and <em>key</em> as well as some Echonest-specific metrics like <em>Danceability</em> and <em>Energy</em>.
+		</p>
+		<p>
+			The Echonest Remix API is used to create one long beat matched remix of all the tracks we could find audio for.
+		</p>
+		<p>Remix of the Century was created at the 2012 <a href="http://london.musichackday.org/2012/">Music Hackday</a> in London.
+		<h3>Stats</h3>
+		<p>Tracks: 366 (we only take the top 3 tracks for each year)</p>
 	</div>
-	<div class="track-buy section">
-		<a href="" class="button icon sevendigital"><span>Buy track</span></a>
-		<a href="" class="button icon sevendigital"><span>Buy album</span></a>
-		<div class="buttons align-right">
-			<a href="" class="button icon spotify no-text" title="Listen in Spotify"><span>Spotify</span></a>
-			<a href="" class="button icon tomahawk no-text" title="Listen in Tomahawk"><span>Tomahawk</span></a>
+	<div id="panel-track" class="panel" style="display:none">
+		<h2>
+			<span class="track-name">Track name</span> by <span class="track-artist">Artist</span>
+		</h2>
+		<div class="track-meta">
+			<p class="track-year">Released 1980</p>
+			<div class="track-social">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-count="none" data-url="http://www.remixofthecentury.com/track/123" data-text="Number 1 1980" data-hashtags="rotc">Tweet</a>
+				<!--a href="" class="facebook">Facebook</a-->
+			</div>
+			<p>Yearly rank: 1</p>
+			<div class="section">
+				<table class="track-audio-summary">
+					<tr>
+						<th>Key</th>
+						<th>Mode</th>
+						<th>Tempo</th>
+						<th>Time signature</th>
+					</tr>
+					<tr>
+						<td>D&#9837;</td>
+						<td>Minor</td>
+						<td>142 BPM</td>
+						<td>4 beats per measure</td>
+					</tr>
+				</table>
+			</div>
+			<div class="section">
+				<table class="track-audio-metrics">
+					<tr>
+						<th>Energy</th>
+						<td class="bar"><span class="animate" style="width: 80%"></span></td>
+						<td>0.8</td>
+					</tr>
+					<tr>
+						<th>Danceability</th>
+						<td class="bar"><span class="animate" style="width: 50%"></span></td>
+						<td>0.5</td>
+					</tr>
+					<tr>
+						<th>Liveness</th>
+						<td class="bar"><span class="animate" style="width: 10%"></span></td>
+						<td>0.1</td>
+					</tr>
+				</table>
+			</div>
 		</div>
+		<div class="track-buy section">
+			<a href="" class="button icon sevendigital"><span>Buy track</span></a>
+			<a href="" class="button icon sevendigital"><span>Buy album</span></a>
+			<div class="buttons align-right">
+				<a href="" class="button icon spotify no-text" title="Listen in Spotify"><span>Spotify</span></a>
+				<a href="" class="button icon tomahawk no-text" title="Listen in Tomahawk"><span>Tomahawk</span></a>
+			</div>
+		</div>
+		<!--div class="track-related section">
+			<h3>
+				Related tracks
+				<a href="" class="button icon spotify align-right"><span>Playlist</span></a>
+			</h3>
+			<ul>
+				<li>
+					Track 1 
+					<div class="buttons">
+						<a href="" class="icon no-text spotify" title="Listen in Spotify"><span>Spotify</span></a>
+						<a href="" class="icon no-text tomahawk" title="Listen in Tomahawk"><span>Tomahawk</span></a>
+						<a href="" class="icon no-text sevendigital" title="Buy track from 7digital"><span>Buy track</span></a>
+					</div>
+				</li>
+				<li>
+					Track 1 
+					<div class="buttons">
+						<a href="" class="icon no-text sevendigital"><span>Buy track</span></a>
+					</div>
+				</li>
+			</ul>
+		</div-->
 	</div>
-	<!--div class="track-related section">
-		<h3>
-			Related tracks
-			<a href="" class="button icon spotify align-right"><span>Playlist</span></a>
-		</h3>
-		<ul>
-			<li>
-				Track 1 
-				<div class="buttons">
-					<a href="" class="icon no-text spotify" title="Listen in Spotify"><span>Spotify</span></a>
-					<a href="" class="icon no-text tomahawk" title="Listen in Tomahawk"><span>Tomahawk</span></a>
-					<a href="" class="icon no-text sevendigital" title="Buy track from 7digital"><span>Buy track</span></a>
-				</div>
-			</li>
-			<li>
-				Track 1 
-				<div class="buttons">
-					<a href="" class="icon no-text sevendigital"><span>Buy track</span></a>
-				</div>
-			</li>
-		</ul>
-	</div-->
 </div>
 <footer>
 	<div class="logos">
