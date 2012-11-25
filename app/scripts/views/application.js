@@ -3,10 +3,14 @@ whitburn.Views.Application = Backbone.View.extend({
   template: new EJS({url: 'scripts/templates/application.ejs'}),
 
   initialize: function() {
+    var self = this;
     _.bindAll(this, 'render', 'setup');
 
     // Bind to model events
-    this.model.on('change:isInitialized', this.setup);
+    this.model.fetchTracks().done(function() {
+      console.log("fetch tracks", self.model.get('tracks'));
+      self.setup();
+    });
   },
 
   setup: function() {
@@ -21,6 +25,7 @@ whitburn.Views.Application = Backbone.View.extend({
       scatterPlot: new whitburn.Views.ScatterPlot({el: '#plot', model: this.model, collection: this.model.get('tracks')}),
       player:      new whitburn.Views.Player({el: '#player', model: this.model, collection: playerTracksCollection })
     };
+
     this.render();
   },
 
