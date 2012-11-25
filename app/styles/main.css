@@ -103,6 +103,18 @@ body,
   padding:5px 15px;
 }
 
+/* Sidebar: Meta */
+.track-meta {
+  position: relative;
+  display: block;
+}
+.track-social {
+  display: block;
+  position: absolute;
+  top:0;
+  right:0;
+}
+
 /* Sidebar: Related tracks */
 .track-related li {
   position: relative;

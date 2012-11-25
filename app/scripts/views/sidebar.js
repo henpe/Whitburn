@@ -12,6 +12,8 @@ whitburn.Views.Sidebar = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template.render());
 
+    twttr.widgets.load();
+
     return this.$el;
   }
 });
