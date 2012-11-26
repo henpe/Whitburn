@@ -11,10 +11,11 @@ whitburn.Views.Player = Backbone.View.extend({
     _.bindAll(this, 'render');
 
     var self = this;
-    setInterval(function() {
-      self.updateSlider();
-    }, 1000);
-
+    soundcloud.addEventListener('onPlayerReady', function(player, data) {
+        self.scPlayer = soundcloud.getPlayer('mainPlayer');
+        self.duration = self.scPlayer.api_getTrackDuration();
+        self.createSlider(self.duration);
+    });
 
     soundcloud.addEventListener('onMediaPlay', function(player, data) {
       self.$el.addClass('playing');
@@ -27,37 +28,14 @@ whitburn.Views.Player = Backbone.View.extend({
   },
 
   handlePlayPause: function() {
-    mainPlayer.api_toggle();
+    this.scPlayer.api_toggle();
   },
 
-  updateSlider: function() {
-    if (mainPlayer && this.scrubbing === false) {
-      var position = mainPlayer.api_getTrackPosition(),
-          year     = this.collection.getYearForTime(position);
-
-      this.$('.slider').slider('value', year);
-
-      this.goToYear(year);
-    }
-  },
-
-  goToYear: function(year) {
-      this.currentYear = year;
-      this.$('.year').text(year);
-      //console.log('going to year '+year);
-
-      // Broadcast here
-      this.model.trigger('player:year', this.currentYear);
-  },
-
-  render: function() {
+  createSlider: function(duration) {
     var self = this;
-
-    this.$el.html(this.template.render());
-
     this.slider = this.$(".slider").slider({
-      min: 1890,
-      max: 2011,
+      min: 0,
+      max: duration,
       start: function() {
         self.scrubbing = true;
       },
@@ -65,16 +43,36 @@ whitburn.Views.Player = Backbone.View.extend({
         self.scrubbing = false;
       },
       slide: function(event, ui) {
-        self.currentYear = ui.value;
-        self.goToYear(self.currentYear);
-
-        var track = self.collection.getTrackForYear(self.currentYear);
-        if (track) {
-          mainPlayer.api_seekTo(track.get('timestamp'));
-          mainPlayer.api_play();
-        }
+        self.goToTrack(ui.value);
+        self.scPlayer.api_seekTo(ui.value);
+        self.scPlayer.api_play();
       }
     });
+
+    // Update slider once per second
+    self._sliderInterval = setInterval(function() {
+      self.updateSlider();
+    }, 1000);
+  },
+
+  updateSlider: function() {
+    if (this.scPlayer && this.scrubbing === false) {
+      var position = this.scPlayer.api_getTrackPosition();
+      this.$('.slider').slider('value', position);
+      this.goToTrack(position);
+    }
+  },
+
+  goToTrack: function(position) {
+      // Todo: Check if position matches audio timestamp
+      // If yes, grab track ID and broadcast it
+      this.model.trigger('player:track', this.currentTrack);
+  },
+
+  render: function() {
+    var self = this;
+
+    this.$el.html(this.template.render());
   }
 
 
