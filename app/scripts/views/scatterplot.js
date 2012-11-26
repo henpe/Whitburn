@@ -57,7 +57,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     // Scales
     this.xScale = d3.time.scale().range([0, width]);
     this.yScale = d3.scale.linear().range([height, 0]);
-    this.colorScale = d3.scale.linear().range(["blue", "red"]);
+    this.colorScale = d3.scale.linear().range(["#cc0000", "#0000cc"]);
     this.sizeScale = d3.scale.linear().range([3, 10]);
     this.chromaticScale = d3.scale.ordinal().range(['C', 'D&#9837;', 'D', 'E&#9837;', 'E', 'F', 'G&#9837;', 'G', 'A&#9837;', 'A', 'B&#9837;', 'B']);
 
@@ -90,10 +90,10 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         track.danceability = summary.danceability;
         track.duration = summary.duration;
         track.energy = summary.energy;
-        track.key = summary.key;
+        track.key = summary.key.value;
         track.liveness = summary.liveness;
         track.loudness = summary.loudness;
-        track.mode = summary.mode;
+        track.mode = summary.mode.value;
         track.speechiness = summary.speechiness;
         track.tempo = summary.tempo;
         track.time_signature = summary.time_signature;
