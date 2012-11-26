@@ -91,6 +91,11 @@ body {
   right: 0;
   padding:0 20px;
 }
+.sidebar .spotify-player {
+  position: absolute;
+  bottom: 0;
+  left:-15px;
+}
 .sidebar footer {
   height:33px;
   padding: 7px 15px 10px 15px;

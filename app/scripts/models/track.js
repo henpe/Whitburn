@@ -36,6 +36,7 @@ whitburn.Models.Track = Backbone.Model.extend({
     if (response.tracks) {
       _.each(response.tracks, function(track) {
         if (track.catalog === "spotify-WW") {
+          response.spotify_uri = track.foreign_id.replace('spotify-WW', 'spotify');
           response.spotify_link = 'http://open.spotify.com/track/' + track.foreign_id.replace('spotify-WW:track:', '');
         }
       });

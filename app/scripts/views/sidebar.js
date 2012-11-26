@@ -64,7 +64,8 @@ whitburn.Views.Sidebar = Backbone.View.extend({
       this.$el.find('.track-buy').html(
         this.buyTemplate.render({
           sevendigital_link: track.get('sevendigital_link'),
-          spotify_link: track.get('spotify_link')
+          spotify_link: track.get('spotify_link'),
+          spotify_uri: track.get('spotify_uri')
         })
       );
     }
