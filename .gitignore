@@ -1,7 +1,7 @@
 .DS_Store
 .npmignore
 *.pyc
-app/.DS_Store
+*.DS_Store
 tools/_lib/cachetmp/*
 tools/input/*
 tools/output/*
@@ -10,3 +10,8 @@ proxy/cachetmp/*
 *.log
 
 npm-debug.log
+
+dist/*
+temp/*
+
+app/scripts/vendor/.DS_Store
