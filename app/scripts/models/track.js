@@ -36,9 +36,18 @@ whitburn.Models.Track = Backbone.Model.extend({
     if (response.tracks) {
       _.each(response.tracks, function(track) {
         if (track.catalog === "spotify-WW") {
-          response.spotify_link = 'http://open.spotify.com/track/' + track.id;
+          response.spotify_link = 'http://open.spotify.com/track/' + track.foreign_id.replace('spotify-WW:track:', '');
         }
       });
+    }
+
+    if (response.trackdata_7digital) {
+      var xmlDoc = $.parseXML(response.trackdata_7digital),
+          xml = $(xmlDoc),
+          link = xml.find( "track > url" ).text();
+      if (link) {
+        response.sevendigital_link = link;
+      }
     }
 
     var date;

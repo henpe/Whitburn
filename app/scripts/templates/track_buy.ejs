@@ -1,6 +1,5 @@
-<a href="<%= sevendigital_track_link %>" class="button icon sevendigital"><span>Buy track</span></a>
-<a href="<%= sevendigital_album_link %>" class="button icon sevendigital"><span>Buy album</span></a>
+<a href="<%= sevendigital_link %>" target="external" class="button icon sevendigital"><span>Buy track</span></a>
 <div class="buttons align-right">
-	<a href="<%= spotify_link %>" class="button icon spotify no-text" title="Listen in Spotify"><span>Spotify</span></a>
-	<a href="<%= spotify_link %>" class="button icon tomahawk no-text" title="Listen in Tomahawk"><span>Tomahawk</span></a>
+	<a href="<%= spotify_link %>" target="external" class="button icon spotify no-text" title="Listen in Spotify"><span>Spotify</span></a>
+	<a href="http://toma.hk/search.php?q=<%= encodeURIComponent(spotify_link) %>" target="external" class="button icon tomahawk no-text" title="Listen in Tomahawk"><span>Tomahawk</span></a>
 </div>

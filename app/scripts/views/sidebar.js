@@ -60,12 +60,10 @@ whitburn.Views.Sidebar = Backbone.View.extend({
       node.find('.bar span').css({width: audio_summary.liveness * 100 + '%'});
       node.find('.value').text(audio_summary.liveness);
 
-      console.log('track', track);
       // Buy and external player links
       this.$el.find('.track-buy').html(
         this.buyTemplate.render({
-          sevendigital_track_link: '',
-          sevendigital_album_link: '',
+          sevendigital_link: track.get('sevendigital_link'),
           spotify_link: track.get('spotify_link')
         })
       );
