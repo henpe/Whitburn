@@ -6,7 +6,6 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     _.bindAll(this,
       'render',
       'renderPlot',
-      'updatePlot',
       'changeY',
       'changeColour',
       'changeSize',
@@ -57,7 +56,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     // Scales
     this.xScale = d3.time.scale().range([0, width]);
     this.yScale = d3.scale.linear().range([height, 0]);
-    this.colorScale = d3.scale.linear().range(["#cc0000", "#0000cc"]);
+    this.colorScale = d3.scale.linear().range(["#0000cc", "#cc0000"]);
     this.sizeScale = d3.scale.linear().range([3, 10]);
     this.chromaticScale = d3.scale.ordinal().range(['C', 'D&#9837;', 'D', 'E&#9837;', 'E', 'F', 'G&#9837;', 'G', 'A&#9837;', 'A', 'B&#9837;', 'B']);
 
