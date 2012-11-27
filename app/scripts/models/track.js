@@ -28,9 +28,9 @@ whitburn.Models.Track = Backbone.Model.extend({
       summary.key = { value: value, label: this.chromaticScale[value] };
       summary.tempo = Math.round(parseFloat(summary.tempo));
 
-      summary.energy = summary.energy.toFixed(2);
-      summary.liveness = summary.liveness.toFixed(2);
-      summary.danceability = summary.danceability.toFixed(2);
+      if (summary.energy) summary.energy = summary.energy.toFixed(2);
+      if (summary.liveness) summary.liveness = summary.liveness.toFixed(2);
+      if (summary.danceability) summary.danceability = summary.danceability.toFixed(2);
     }
 
     if (response.tracks) {
@@ -52,23 +52,17 @@ whitburn.Models.Track = Backbone.Model.extend({
     }
 
     var date;
-    if (response.datePeaked) {
-      date = response.dateEntered.replace('+','').split('/');
+    if (response.date_peaked) {
+      date = response.date_entered.replace('+','').split('/');
       response.date_peaked = new Date(date[2], date[1], date[0]);
-      delete response.datePeaked;
     }
-    if (response.dateEntered) {
-      date = response.dateEntered.replace('+','').split('/');
+    if (response.date_entered) {
+      date = response.date_entered.replace('+','').split('/');
       response.date_entered = new Date(date[2], date[1], date[0]);
-      delete response.dateEntered;
     } else {
       response.date_entered = new Date(response.year, 0, 0);
     }
-    response.no_of_weeks_charted = response.ch;
-    response.yearly_rank = parseInt(response.yearlyRank, 10);
-
-    delete response.ch;
-    delete response.yearlyRank;
+    response.yearly_rank = parseInt(response.yearly_rank, 10);
 
     return response;
   },
