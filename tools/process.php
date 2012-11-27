@@ -17,15 +17,15 @@
 
     foreach ($hitlist as $track) {
         $hitData = array(
-            'year'   => intval($track[0]),
-            'artist' => $track[1],
-            'song'   => $track[2],
-            'album'  => $track[3],
-            'yearlyRank' => intval($track[4]),
-            'time'   => $track[5],
-            'ch'     => $track[6],
-            'dateEntered' => $track[7],
-            'datePeaked'  => $track[8]
+            'year'                  => intval($track[0]),
+            'artist'                => $track[1],
+            'song'                  => $track[2],
+            'album'                 => $track[3],
+            'yearly_rank'           => intval($track[4]),
+            'time'                  => $track[5],
+            'no_of_weeks_charted'   => $track[6],
+            'date_entered'          => $track[7],
+            'date_peaked'           => $track[8]
         );
 
         $trackName = "${hitData['year']}: ${hitData['artist']} ${hitData['song']} ";
@@ -40,7 +40,7 @@
         $track = new Track($hitData['song'], $hitData['artist'], $hitData['year']);
 
         // Download Audio - only for the Top track!
-        if ($hitData['yearlyRank'] == 1) {
+        if ($hitData['yearly_rank'] == 1) {
             $track->downloadPreviewAudio($filename);
 
             if (file_exists($filename)) {
