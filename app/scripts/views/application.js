@@ -4,7 +4,7 @@ whitburn.Views.Application = Backbone.View.extend({
 
   initialize: function() {
     var self = this;
-    _.bindAll(this, 'render', 'setup', 'show');
+    _.bindAll(this, 'render', 'show');
 
     this.$el.html(this.template.render());
 
