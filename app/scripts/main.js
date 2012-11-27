@@ -22,7 +22,7 @@ window.whitburn = {
     app.model.fetchTracks().done(function() {
       app.view = new whitburn.Views.Application({model: app.model, el: '#app'});
       app.router = new whitburn.Routers.Application({model: app.model, view: app.view});
-      Backbone.history.start({pushState: false});
+      Backbone.history.start({pushState: true});
     });
   }
 };
