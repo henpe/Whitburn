@@ -64,9 +64,10 @@ whitburn.Views.Player = Backbone.View.extend({
   },
 
   goToTrack: function(position) {
-      // Todo: Check if position matches audio timestamp
-      // If yes, grab track ID and broadcast it
-      this.model.trigger('player:track', this.currentTrack);
+      var track = this.collection.getTrackAtTime(position);
+      if (track) {
+        this.model.trigger('player:track', this.currentTrack);
+      }
   },
 
   render: function() {

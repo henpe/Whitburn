@@ -8,9 +8,6 @@ whitburn.Views.Application = Backbone.View.extend({
 
     this.$el.html(this.template.render());
 
-    // Create child views
-    var playerTracksCollection = new whitburn.Collections.PlayerTracks();
-
     this.views = {
       sidebar: new whitburn.Views.Sidebar({el: '#sidebar', model: this.model}),
       toolbar: new whitburn.Views.Toolbar({el: '#toolbar', model: this.model}),
