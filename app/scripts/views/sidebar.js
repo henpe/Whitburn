@@ -2,6 +2,7 @@ whitburn.Views.Sidebar = Backbone.View.extend({
 
   template: new EJS({url: 'scripts/templates/sidebar.ejs'}),
   metaDataTemplate: new EJS({url: 'scripts/templates/track_metadata.ejs'}),
+  socialTemplate: new EJS({url: 'scripts/templates/track_social.ejs'}),
   buyTemplate: new EJS({url: 'scripts/templates/track_buy.ejs'}),
   events: {
 
@@ -15,7 +16,6 @@ whitburn.Views.Sidebar = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template.render());
-    twttr.widgets.load();
 
     return this.$el;
   },
@@ -46,6 +46,17 @@ whitburn.Views.Sidebar = Backbone.View.extend({
         })
       );
 
+      this.$el.find('.track-social').html(
+        this.socialTemplate.render({
+          year: track.get('date_entered').getFullYear(),
+          rank: track.get('yearly_rank'),
+          id: track.get('id'),
+          title: track.get('title'),
+          artist: track.get('artist')
+        })
+      );
+      twttr.widgets.load();
+
       // Do not use template for the bars in order
       // to do CSS animation
       var node = this.$el.find('.track-metric-energy');
@@ -63,6 +74,8 @@ whitburn.Views.Sidebar = Backbone.View.extend({
       // Buy and external player links
       this.$el.find('.track-buy').html(
         this.buyTemplate.render({
+          title: track.get('title'),
+          artist: track.get('artist'),
           sevendigital_link: track.get('sevendigital_link'),
           spotify_link: track.get('spotify_link'),
           spotify_uri: track.get('spotify_uri')
