@@ -10,7 +10,9 @@
             $this->artist = $artist;
             $this->year = $year;
 
-            $this->get7DigitalTrackID("$artist $song");
+            // Henrik: Commented out this temporarily so we can get the data
+            // from Echonest
+            //$this->get7DigitalTrackID("$artist $song");
         }
 
 
@@ -27,7 +29,10 @@
         }
 
         function getEchoNestData() {
-            $url = 'http://developer.echonest.com/api/v4/song/profile?track_id=7digital-UK:track:'.$this->trackID7Digital.'&bucket=id:7digital-UK&bucket=tracks&bucket=id:spotify-WW&bucket=song_type&bucket=audio_summary&bucket=song_hotttnesss&api_key='.$this->echonestKey;
+            // Henrik: Changed to use search as we don't have the 7digital id when
+            // get7DigitalTrackID is commented out
+            //$url = 'http://developer.echonest.com/api/v4/song/profile?track_id=7digital-UK:track:'.$this->trackID7Digital.'&bucket=id:7digital-UK&bucket=tracks&bucket=id:spotify-WW&bucket=song_type&bucket=audio_summary&bucket=song_hotttnesss&api_key='.$this->echonestKey;
+            $url = 'http://developer.echonest.com/api/v4/song/search?artist='.urlencode($this->artist).'&title='.urlencode($this->song).'&bucket=artist_familiarity&bucket=song_hotttnesss&bucket=artist_location&bucket=id:musicbrainz&bucket=id:7digital-US&bucket=id:spotify-WW&bucket=id:rdio-US&bucket=id:deezer&bucket=id:songkick&bucket=tracks&bucket=song_type&bucket=audio_summary&results=1&api_key='.$this->echonestKey;
             $response = webGet($url, '+2 days');
             $response = json_decode($response, true);
             $finalData = $response['response']['songs'][0];
@@ -35,12 +40,18 @@
             // Filter tracks
             $filteredTracks = array();
             $hasSpotify = false;
+            $has7digital = false;
             for ($i=0; $i<count($finalData['tracks']); $i++) {
                 $track = $finalData['tracks'][$i];
 
+                // Henrik: Commented out as 7digital ID is missing
                 // Only add the 7DigitalID that we have the audio sample of
-                if (strstr($track['foreign_id'], '7digital-UK:track:'.$this->trackID7Digital)) {
+                //if (strstr($track['foreign_id'], '7digital-UK:track:'.$this->trackID7Digital)) {
+                //    $filteredTracks[] = $track;
+                //}
+                if (strstr($track['catalog'], '7digital') && $has7digital == false) {
                     $filteredTracks[] = $track;
+                    $has7digital = true;
                 }
 
                 // Only add a single Spotify entry
