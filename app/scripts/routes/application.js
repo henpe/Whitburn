@@ -2,7 +2,7 @@ whitburn.Routers.Application = Backbone.Router.extend({
 
   routes: {
       '':                 'home',
-      'track/:track':     'track'
+      ':year/:rank':      'track'
     },
 
     initialize: function(options) {
@@ -15,7 +15,8 @@ whitburn.Routers.Application = Backbone.Router.extend({
       this.view.show("home");
     },
 
-    track: function(id) {
+    track: function(year, rank) {
+      var id = year + '-' + rank;
       console.debug('Route: Track', id);
       this.model.set('currentTrack', id);
       this.view.show("track", id);

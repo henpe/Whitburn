@@ -21,6 +21,10 @@ whitburn.Models.Track = Backbone.Model.extend({
   parse: function(response) {
     var value,
         summary = response.audio_summary;
+
+    // Change id to be <year>-<rank>
+    response.echonest_id = response.id;
+    response.id = response.year + "-" + response.yearly_rank;
     if (summary) {
       value = summary.mode;
       summary.mode = { value: value, label: this.modes[value] };
