@@ -1,6 +1,6 @@
 whitburn.Collections.Tracks = Backbone.Collection.extend({
 
-  url: 'data/tracks_data.json',
+  url: '/data/tracks_data.json',
 
   model: whitburn.Models.Track,
 

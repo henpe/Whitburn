@@ -1,9 +1,9 @@
 whitburn.Views.Sidebar = Backbone.View.extend({
 
-  template: new EJS({url: 'scripts/templates/sidebar.ejs'}),
-  metaDataTemplate: new EJS({url: 'scripts/templates/track_metadata.ejs'}),
-  socialTemplate: new EJS({url: 'scripts/templates/track_social.ejs'}),
-  buyTemplate: new EJS({url: 'scripts/templates/track_buy.ejs'}),
+  template: new EJS({url: '/scripts/templates/sidebar.ejs'}),
+  metaDataTemplate: new EJS({url: '/scripts/templates/track_metadata.ejs'}),
+  socialTemplate: new EJS({url: '/scripts/templates/track_social.ejs'}),
+  buyTemplate: new EJS({url: '/scripts/templates/track_buy.ejs'}),
   events: {
 
   },

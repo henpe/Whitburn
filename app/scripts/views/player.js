@@ -1,6 +1,6 @@
 whitburn.Views.Player = Backbone.View.extend({
 
-  template: new EJS({url: 'scripts/templates/player.ejs'}),
+  template: new EJS({url: '/scripts/templates/player.ejs'}),
   scrubbing: false,
 
   events: {

@@ -1,6 +1,6 @@
 whitburn.Views.ScatterPlot = Backbone.View.extend({
 
-  template: new EJS({url: 'scripts/templates/scatterplot.ejs'}),
+  template: new EJS({url: '/scripts/templates/scatterplot.ejs'}),
 
   initialize: function() {
     _.bindAll(this,

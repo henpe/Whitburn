@@ -1,6 +1,6 @@
 whitburn.Views.Application = Backbone.View.extend({
 
-  template: new EJS({url: 'scripts/templates/application.ejs'}),
+  template: new EJS({url: '/scripts/templates/application.ejs'}),
 
   initialize: function() {
     var self = this;

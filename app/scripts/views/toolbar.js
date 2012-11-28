@@ -1,6 +1,6 @@
 whitburn.Views.Toolbar = Backbone.View.extend({
 
-  template: new EJS({url: 'scripts/templates/toolbar.ejs'}),
+  template: new EJS({url: '/scripts/templates/toolbar.ejs'}),
   events: {
     "change .filter-x"      : "onChangeX",
     "change .filter-y"      : "onChangeY",
