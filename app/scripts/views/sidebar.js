@@ -48,7 +48,7 @@ whitburn.Views.Sidebar = Backbone.View.extend({
 
       this.$el.find('.track-social').html(
         this.socialTemplate.render({
-          year: track.get('date_entered').getFullYear(),
+          year: track.get('year'),
           rank: track.get('yearly_rank'),
           id: track.get('id'),
           title: track.get('title'),
