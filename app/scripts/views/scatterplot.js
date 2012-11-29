@@ -71,7 +71,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     // Create data array
     this.data = [];
     this.collection.each(function(model) {
-      if (!model.get('id')) return;
+      if (!model.get('echonest_id')) return;
       // Copy track properties
       var track = {
         id: model.get('id'),
