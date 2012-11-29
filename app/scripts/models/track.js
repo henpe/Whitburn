@@ -57,7 +57,7 @@ whitburn.Models.Track = Backbone.Model.extend({
 
     var date;
     if (response.date_peaked) {
-      date = response.date_entered.replace('+','').split('/');
+      date = response.date_peaked.replace('+','').split('/');
       response.date_peaked = new Date(date[2], date[1], date[0]);
     }
     if (response.date_entered) {
