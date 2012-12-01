@@ -6,17 +6,18 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     _.bindAll(this,
       'render',
       'renderPlot',
+      'updateAudioElements',
       'changeY',
       'changeColour',
       'changeSize',
       'onClick'
     );
 
+    this.model.bind('change:isPlaying', this.updateAudioElements);
     this.model.bind('change:param_x', this.render);
     this.model.bind('change:param_y', this.changeY);
-    this.model.bind('change:param_colour', this.changeColour);
+    this.model.bind('change:param_color', this.changeColour);
     this.model.bind('change:param_size', this.changeSize);
-    //this.model.bind('player:year', this.updateYear);
   },
 
   render: function() {
@@ -32,17 +33,17 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     var self = this;
 
     // Parameters
-    var param_x = this.model.get('param_x') || 'date',
-        param_y = this.model.get('param_y') || 'no_of_weeks_charted',
-        param_color = this.model.get('param_colour') || 'song_hotttnesss',
-        param_size = this.model.get('param_size') || 'duration';
+    var param_x = this.model.get('param_x'),
+        param_y = this.model.get('param_y'),
+        param_color = this.model.get('param_color'),
+        param_size = this.model.get('param_size');
 
     // Container
     var containerHeight = this.$el.height();
         containerWidth = this.$el.width();
 
     // Dimensions
-    var margin = {top: 40, right: 40, bottom: 40, left: 50},
+    var margin = {top: 30, right: 30, bottom: 30, left: 40},
         width = containerWidth - margin.left - margin.right,
         height = containerHeight - margin.top - margin.bottom;
 
@@ -98,6 +99,8 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         track.time_signature = summary.time_signature;
       }
 
+      track.in_remix = (model.get('audio'));
+
       self.data.push(track);
     });
 
@@ -134,15 +137,39 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     this.svg.selectAll(".dot")
         .data(this.data)
       .enter().append("circle")
-        .attr("class", "dot")
-        .attr("id", function(d) { return d.id; })
-        //.attr("id", function(d) { return 'year-' + d.year; })
+        .attr("class", function(d) { return (d.in_remix) ? "dot in-remix" : "dot"; })
+        .attr("id", function(d) { return 't-' + d.id; })
         .attr("r", function(d) { return self.sizeScale(d[param_size]); })
-        .attr("title", function(d) { return 'x' + d.name; })
+        .attr("title", function(d) { return d.name; })
         .attr("cx", function(d) { return self.xScale(d[param_x]); })
         .attr("cy", function(d) { return self.yScale(d[param_y]); })
         .style("fill", function(d) { return self.colorScale(d[param_color]); })
       .on("click", this.onClick);
+
+    this.svg.selectAll('.dot')
+        .call(bootstrap.tooltip()
+          .placement("right"));
+  },
+
+  updateAudioElements: function(model, value, options) {
+    var self = this,
+        param_color = this.model.get('param_color');
+
+    if (value) {
+      this.svg.selectAll('.dot:not(.in-remix)')
+          .transition()
+          .ease('linear')
+          .duration(800)
+          .style('fill', '#bbb')
+          .style('opacity', 0.8);
+    } else {
+      this.svg.selectAll('.dot')
+          .transition()
+          .ease('linear')
+          .duration(800)
+          .style('fill',  function(d) { return self.colorScale(d[param_color]); })
+          .style('opacity', 1);
+    }
   },
 
   changeY: function() {
@@ -157,10 +184,10 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     this.yScale.domain(d3.extent(this.data, function(d) { return d[param_y]; })).nice();
 
     this.svg.selectAll('.dot')
-      .transition()
-      .ease('linear')
-      .duration(1000)
-      .attr("cy", function(d) { return self.yScale(d[param_y]); });
+        .transition()
+        .ease('linear')
+        .duration(1000)
+        .attr("cy", function(d) { return self.yScale(d[param_y]); });
 
     this.svg.selectAll('.y')
         .transition()
@@ -171,7 +198,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
 
   changeColour: function() {
     var self = this,
-        param_color = this.model.get('param_colour');
+        param_color = this.model.get('param_color');
 
     this.colorScale.domain(d3.extent(this.data, function(d) { return d[param_color]; })).nice();
 
@@ -195,26 +222,10 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
       .attr("r", function(d) { return self.sizeScale(d[param_size]); });
   },
 
-  updateYear: function(year) {
-    if (this.currentYear !== year) {
-      var currentTrack = this.collection.find(function(track){
-        //console.log('track', track.id);
-        return (track.get('year').getFullYear() === parseInt(year, 10));
-      });
-      
-      //console.log(d3.select('circle.dot').attr('id'), currentTrack);
-      this.$el.find('.artist').text(currentTrack.get('artist'));
-      this.$el.find('.track-name').text(currentTrack.get('name'));
-      //this.$el.find('.year').text(year);
-
-      d3.select('.active').attr('class', 'dot');
-      d3.select('#' + currentTrack.id).attr('class', 'dot active');
-      this.currentYear = year;
-    }
-  },
-
-  onClick: function(e) {
+  onClick: function(e, g, h) {
+    this.svg.selectAll('circle.active').classed('active', false);
     if (e.id) {
+      this.svg.selectAll('#t-' + e.id).classed('active', true);
       var route = e.id.replace('-', '/');
       app.router.navigate(route, {trigger: true});
     }
