@@ -31,7 +31,7 @@ whitburn.Views.Toolbar = Backbone.View.extend({
 
   onChangeColour: function(e) {
     var target = $(e.target);
-    this.model.set('param_colour', target.val());
+    this.model.set('param_color', target.val());
   },
 
   onChangeSize: function(e) {
