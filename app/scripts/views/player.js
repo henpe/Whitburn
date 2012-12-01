@@ -12,17 +12,18 @@ whitburn.Views.Player = Backbone.View.extend({
 
     var self = this;
     soundcloud.addEventListener('onPlayerReady', function(player, data) {
-        self.scPlayer = soundcloud.getPlayer('mainPlayer');
-        self.duration = self.scPlayer.api_getTrackDuration();
-        self.createSlider(self.duration);
+      self.scPlayer = soundcloud.getPlayer('mainPlayer');
+      self.duration = self.scPlayer.api_getTrackDuration();
+      self.createSlider(self.duration);
     });
 
     soundcloud.addEventListener('onMediaPlay', function(player, data) {
       self.$el.addClass('playing');
-
+      self.model.set('isPlaying', true);
     });
     soundcloud.addEventListener('onMediaPause', function(player, data) {
       self.$el.removeClass('playing');
+      self.model.set('isPlaying', false);
     });
 
   },
@@ -66,7 +67,7 @@ whitburn.Views.Player = Backbone.View.extend({
   goToTrack: function(position) {
       var track = this.collection.getTrackAtTime(position);
       if (track) {
-        this.model.trigger('player:track', this.currentTrack);
+        this.model.trigger('player:track', track);
       }
   },
 
