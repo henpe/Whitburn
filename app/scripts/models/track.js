@@ -35,6 +35,7 @@ whitburn.Models.Track = Backbone.Model.extend({
       if (summary.energy) summary.energy = summary.energy.toFixed(2);
       if (summary.liveness) summary.liveness = summary.liveness.toFixed(2);
       if (summary.danceability) summary.danceability = summary.danceability.toFixed(2);
+      if (summary.speechiness) summary.speechiness = summary.speechiness.toFixed(2);
     }
 
     if (response.tracks) {
