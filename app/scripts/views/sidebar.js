@@ -40,7 +40,7 @@ whitburn.Views.Sidebar = Backbone.View.extend({
 
       this.$el.find('.track-meta').html(
         this.metaDataTemplate.render({
-          year: track.get('date_entered').getFullYear(),
+          date_entered: moment(track.get('date_entered')).format('MMMM Do YYYY'),
           rank: track.get('yearly_rank'),
           audio_summary: audio_summary
         })
@@ -66,6 +66,10 @@ whitburn.Views.Sidebar = Backbone.View.extend({
       node = this.$el.find('.track-metric-danceability');
       node.find('.bar span').css({width: audio_summary.danceability * 100 + '%'});
       node.find('.value').text(audio_summary.danceability);
+
+      node = this.$el.find('.track-metric-speechiness');
+      node.find('.bar span').css({width: audio_summary.speechiness * 100 + '%'});
+      node.find('.value').text(audio_summary.speechiness);
 
       node = this.$el.find('.track-metric-liveness');
       node.find('.bar span').css({width: audio_summary.liveness * 100 + '%'});
