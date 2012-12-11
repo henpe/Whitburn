@@ -47,13 +47,8 @@ whitburn.Models.Track = Backbone.Model.extend({
       });
     }
 
-    if (response.trackdata_7digital) {
-      var xmlDoc = $.parseXML(response.trackdata_7digital),
-          xml = $(xmlDoc),
-          link = xml.find( "track > url" ).text();
-      if (link) {
-        response.sevendigital_link = link;
-      }
+    if (response.sevendigital) {
+      response.sevendigital_link = response.sevendigital.track_url;
     }
 
     var date;

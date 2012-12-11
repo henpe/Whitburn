@@ -12,7 +12,7 @@ whitburn.Collections.Tracks = Backbone.Collection.extend({
     this.timestamps = {};
     _.each(response, function(track) {
       if (track.audio && track.audio.timestamp) {
-        this.timestamps[Math.round(track.audio.timestamp)] = track.id || track.title;
+        this.timestamps[Math.round(track.audio.timestamp)] = track.year + "-" + track.yearly_rank;
       }
     }, this);
     return response;

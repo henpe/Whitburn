@@ -7,6 +7,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
       'render',
       'renderPlot',
       'updateAudioElements',
+      'selectTrack',
       'changeY',
       'changeColour',
       'changeSize',
@@ -14,6 +15,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     );
 
     this.model.bind('change:isPlaying', this.updateAudioElements);
+    this.model.bind('change:currentTrack', this.selectTrack);
     this.model.bind('change:param_x', this.render);
     this.model.bind('change:param_y', this.changeY);
     this.model.bind('change:param_color', this.changeColour);
@@ -161,7 +163,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
           .ease('linear')
           .duration(800)
           .style('fill', '#bbb')
-          .style('opacity', 0.8);
+          .style('opacity', 0.2);
     } else {
       this.svg.selectAll('.dot')
           .transition()
@@ -169,6 +171,13 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
           .duration(800)
           .style('fill',  function(d) { return self.colorScale(d[param_color]); })
           .style('opacity', 1);
+    }
+  },
+
+  selectTrack: function(model, value, options) {
+    this.svg.selectAll('circle.active').classed('active', false);
+    if (value) {
+      this.svg.selectAll('#t-' + value).classed('active', true);
     }
   },
 

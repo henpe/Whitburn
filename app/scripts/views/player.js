@@ -66,8 +66,9 @@ whitburn.Views.Player = Backbone.View.extend({
 
   goToTrack: function(position) {
       var track = this.collection.getTrackAtTime(position);
-      if (track) {
-        this.model.trigger('player:track', track);
+      if (track && track !== this.currentTrack) {
+        this.currentTrack = track;
+        this.model.set('currentTrack', track);
       }
   },
 

@@ -59,21 +59,26 @@ whitburn.Views.Sidebar = Backbone.View.extend({
 
       // Do not use template for the bars in order
       // to do CSS animation
-      var node = this.$el.find('.track-metric-energy');
-      node.find('.bar span').css({width: audio_summary.energy * 100 + '%'});
-      node.find('.value').text(audio_summary.energy);
+      if (audio_summary) {
+        this.$el.find('.track-audio-metrics').show();
+        var node = this.$el.find('.track-metric-energy');
+        node.find('.bar span').css({width: audio_summary.energy * 100 + '%'});
+        node.find('.value').text(audio_summary.energy);
 
-      node = this.$el.find('.track-metric-danceability');
-      node.find('.bar span').css({width: audio_summary.danceability * 100 + '%'});
-      node.find('.value').text(audio_summary.danceability);
+        node = this.$el.find('.track-metric-danceability');
+        node.find('.bar span').css({width: audio_summary.danceability * 100 + '%'});
+        node.find('.value').text(audio_summary.danceability);
 
-      node = this.$el.find('.track-metric-speechiness');
-      node.find('.bar span').css({width: audio_summary.speechiness * 100 + '%'});
-      node.find('.value').text(audio_summary.speechiness);
+        node = this.$el.find('.track-metric-speechiness');
+        node.find('.bar span').css({width: audio_summary.speechiness * 100 + '%'});
+        node.find('.value').text(audio_summary.speechiness);
 
-      node = this.$el.find('.track-metric-liveness');
-      node.find('.bar span').css({width: audio_summary.liveness * 100 + '%'});
-      node.find('.value').text(audio_summary.liveness);
+        node = this.$el.find('.track-metric-liveness');
+        node.find('.bar span').css({width: audio_summary.liveness * 100 + '%'});
+        node.find('.value').text(audio_summary.liveness);
+      } else {
+        this.$el.find('.track-audio-metrics').hide();
+      }
 
       // Buy and external player links
       this.$el.find('.track-buy').html(
