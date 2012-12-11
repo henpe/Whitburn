@@ -2,9 +2,9 @@
     include('_lib/utils.php');
     include('_lib/track.php');
 
-    $capsuleLengthInSecs = 3;  // Final value should be 3
+    $capsuleLengthInSecs = 5;  // Final value should be 3
 
-    $hitlistData = json_decode(file_get_contents('hitlist_1-3.json'), true);
+    $hitlistData = json_decode(file_get_contents('hitlist_1-5.json'), true);
     $hitlist = $hitlistData['rows'];
     //$hitlist = array_splice($hitlist, 0, 6);
 
@@ -14,7 +14,7 @@
     /*
      * STEP 1 : Download preview files
      */
-
+    $index = 0;
     foreach ($hitlist as $track) {
         $hitData = array(
             'year'                  => intval($track[0]),
@@ -31,13 +31,14 @@
         $trackName = "${hitData['year']}: ${hitData['artist']} ${hitData['song']} ";
         echo $trackName;
 
+        $track = new Track($hitData['song'], $hitData['artist'], $hitData['year']);
+        $trackData = $track->getTrackData();
+
         // Create clean filename
         $filename = strtolower("${hitData['year']}-${hitData['artist']}-${hitData['song']}");
         $filename = preg_replace("/[^a-zA-Z0-9\s\-{P}]/", "", $filename);
         $filename = str_replace(' ', '-', $filename);
         $filename = 'input/'.$filename.'.mp3';
-
-        $track = new Track($hitData['song'], $hitData['artist'], $hitData['year']);
 
         // Download Audio - only for the Top track!
         if ($hitData['yearly_rank'] == 1) {
@@ -45,17 +46,18 @@
 
             if (file_exists($filename)) {
                 $audioFileList[] = $filename;
+                // Keep track of the index in the full array 
+                // to match up the timestamps in step 4
+                $audioIndexList[] = $index;
             }
         }
 
-        $trackData = $track->getEchoNestData();
         $trackData = array_merge($trackData, $hitData);
         $allTrackData[] = $trackData;
+        $index += 1;
 
         echo "\n";
     }
-
-
 
     /*
      * STEP 2: Normalise audio to 44Khz
@@ -81,13 +83,12 @@
     /*
      * STEP 3: Mix it all together
      */
-    $reverseAudioList = array_reverse($audioFileList);
-    $command = "time /opt/local/bin/python2.7 _lib/capsule.py -e -i $capsuleLengthInSecs -t $capsuleLengthInSecs ";
-    $command .= join(' ', $reverseAudioList);
+    $command = "time python _lib/capsule.py -e -i $capsuleLengthInSecs -t $capsuleLengthInSecs ";
+    $command .= join(' ', $audioFileList);
     $shell = `$command`;
 
     //echo $command;
-    //echo $shell;
+    echo $shell;
 
     /*
      * STEP 4: Create a timed running order
@@ -97,33 +98,38 @@
     $listing = explode("\n", $listing);
     $listingJson = array();
 
-    $yearKeys = array_keys($allTrackData);
+    // Remove fadein and fadeout
+    array_splice($listing, 0, 1);
 
     $index = 0;
+    $audioIndex = 0;
     foreach ($listing as $entry) {
-        $entry = explode("\t", $entry);
-        $timestamp = floatval(trim($entry[1]));
-        $name      = trim($entry[6]);
-        $type      = trim($entry[2]);
-        $type      = strtolower(str_replace(' ', '-', $type));
+        // Grab every even entry, this will be the 
+        // playback timestamps rather than the crossfade ones.
+        // This is to get around an issue where some timestamps
+        // have "na" as type, rather than playback or crossfade.
+        if ($index % 2 === 0) {
+            $entry      = explode("\t", $entry);
+            $timestamp  = floatval(trim($entry[1]));
+            $name       = $audioFileList[$audioIndex];//trim($entry[6]);
+            $type       = trim($entry[2]);
+            $type       = strtolower(str_replace(' ', '-', $type));
 
-        $listingJson[] = array(
-            'timestamp' => $timestamp,
-            'type'      => $type,
-            'name'      => $name
-        );
-
-
-        if ($type == 'playback') {
-
-            $currentYear = $yearKeys[$index];
-            $allTrackData[$currentYear]['audio'] = array(
+            $listingJson[] = array(
                 'timestamp' => $timestamp,
+                'type'      => $type,
                 'name'      => $name
             );
 
-            $index += 1;
+            $currentTrack = $audioIndexList[$audioIndex];
+            $allTrackData[$currentTrack]['audio'] = array(
+                'timestamp' => $timestamp,
+                'name'      => $name
+            );
+            $audioIndex += 1;
         }
+
+        $index += 1;
     }
 
     //debug($listingJson);
