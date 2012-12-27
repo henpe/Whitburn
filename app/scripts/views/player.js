@@ -4,31 +4,35 @@ whitburn.Views.Player = Backbone.View.extend({
   scrubbing: false,
 
   events: {
-    'click .play-pause' : 'handlePlayPause'
+    'click .play-pause' : 'togglePlay'
   },
 
   initialize: function() {
     _.bindAll(this, 'render');
 
     var self = this;
+
     soundcloud.addEventListener('onPlayerReady', function(player, data) {
       self.scPlayer = soundcloud.getPlayer('mainPlayer');
       self.duration = self.scPlayer.api_getTrackDuration();
       self.createSlider(self.duration);
     });
-
     soundcloud.addEventListener('onMediaPlay', function(player, data) {
       self.$el.addClass('playing');
       self.model.set('isPlaying', true);
+      self._sliderInterval = setInterval(function() {
+        self.updateSlider();
+      }, 1000);
     });
     soundcloud.addEventListener('onMediaPause', function(player, data) {
       self.$el.removeClass('playing');
       self.model.set('isPlaying', false);
+      clearInterval(self._sliderInterval);
     });
 
   },
 
-  handlePlayPause: function() {
+  togglePlay: function() {
     this.scPlayer.api_toggle();
   },
 
@@ -49,11 +53,6 @@ whitburn.Views.Player = Backbone.View.extend({
         self.scPlayer.api_play();
       }
     });
-
-    // Update slider once per second
-    self._sliderInterval = setInterval(function() {
-      self.updateSlider();
-    }, 1000);
   },
 
   updateSlider: function() {
@@ -68,13 +67,12 @@ whitburn.Views.Player = Backbone.View.extend({
       var track = this.collection.getTrackAtTime(position);
       if (track && track !== this.currentTrack) {
         this.currentTrack = track;
-        this.model.set('currentTrack', track);
+        var route = track.replace('-', '/');
+        app.router.navigate(route, {trigger: true});
       }
   },
 
   render: function() {
-    var self = this;
-
     this.$el.html(this.template.render());
   }
 
