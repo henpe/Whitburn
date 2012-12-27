@@ -42,7 +42,10 @@
 
         // Download Audio - only for the Top track!
         if ($hitData['yearly_rank'] == 1) {
-            $track->downloadPreviewAudio($filename);
+            echo $hitData['year'];
+            if ($hitData['year'] !== 1909) {
+                $track->downloadPreviewAudio($filename);
+            }
 
             if (file_exists($filename)) {
                 $audioFileList[] = $filename;
