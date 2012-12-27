@@ -32,16 +32,21 @@ whitburn.Views.Sidebar = Backbone.View.extend({
   onChangeTrack: function(model) {
     var id = this.model.get('currentTrack'),
         track = this.model.get('tracks').get(id);
-    if (track) {
-      var audio_summary = track.get('audio_summary');
-      // Update metadata
-      this.$el.find('.track-title').text(track.get('title'));
-      this.$el.find('.track-artist').text(track.get('artist_name'));
 
+    if (track) {
+      this.show('track');
+
+      var audio_summary = track.get('audio_summary');
+
+      // Update metadata
+      this.$el.find('.track-title').text(track.get('song'));
+      this.$el.find('.track-artist').text(track.get('artist'));
+
+      var ordinal = this.getOrdinal(track.get('yearly_rank'));
       this.$el.find('.track-meta').html(
         this.metaDataTemplate.render({
-          date_entered: moment(track.get('date_entered')).format('MMMM Do YYYY'),
-          rank: track.get('yearly_rank'),
+          year: track.get('year'),
+          rank: track.get('yearly_rank') + ordinal,
           audio_summary: audio_summary
         })
       );
@@ -91,5 +96,11 @@ whitburn.Views.Sidebar = Backbone.View.extend({
         })
       );
     }
+  },
+
+  getOrdinal: function(number) {
+    var s = ["th","st","nd","rd"],
+        v = number % 100;
+    return (s[(v-20)%10]||s[v]||s[0]);
   }
 });
