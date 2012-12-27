@@ -15,3 +15,7 @@ dist/*
 temp/*
 
 app/scripts/vendor/.DS_Store
+
+*.sublime-project
+
+*.sublime-workspace
