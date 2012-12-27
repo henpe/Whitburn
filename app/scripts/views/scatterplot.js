@@ -6,7 +6,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     _.bindAll(this,
       'render',
       'renderPlot',
-      'updateAudioElements',
+      'toggleAudioElements',
       'selectTrack',
       'changeY',
       'changeColour',
@@ -14,7 +14,7 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
       'onClick'
     );
 
-    this.model.bind('change:isPlaying', this.updateAudioElements);
+    this.model.bind('change:isPlaying', this.toggleAudioElements);
     this.model.bind('change:currentTrack', this.selectTrack);
     this.model.bind('change:param_x', this.render);
     this.model.bind('change:param_y', this.changeY);
@@ -153,7 +153,11 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
           .placement("right"));
   },
 
-  updateAudioElements: function(model, value, options) {
+  /**
+   * Fade out elements without audio when remix track
+   * is playing.
+   */
+  toggleAudioElements: function(model, value, options) {
     var self = this,
         param_color = this.model.get('param_color');
 
@@ -174,6 +178,9 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     }
   },
 
+  /**
+   * Add 'active' class to selected track.
+   */
   selectTrack: function(model, value, options) {
     this.svg.selectAll('circle.active').classed('active', false);
     if (value) {
