@@ -60,7 +60,6 @@ whitburn.Views.Sidebar = Backbone.View.extend({
           artist: track.get('artist')
         })
       );
-      twttr.widgets.load();
 
       // Do not use template for the bars in order
       // to do CSS animation
