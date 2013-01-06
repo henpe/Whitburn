@@ -69,7 +69,7 @@ body {
 #main {
   position: fixed;
   top: 0;
-  right: 350px;
+  right: 360px;
   bottom: 0;
   left: 0;
 }
@@ -78,7 +78,7 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 350px;
+  width: 360px;
 }
 .toolbar,
 .sidebar header {
@@ -386,10 +386,30 @@ body {
   background-color: rgba(255,255,255,0.8);
   text-shadow: 1px 1px 3px #fff;
   color:#222;
-
 }
-.button span {
 
+.socialcount-small > li {
+  border-radius: 4px;
+  background-color: rgba(255,255,255,0.2);
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.socialcount-small > li:hover {
+  background-color: rgba(255,255,255,0.5);
+  text-shadow: 1px 1px 3px #fff;
+  color:#222;
+}
+.socialcount-small > li > a {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.socialcount-small > li > a > span {
+   opacity: 0.5;
+}
+.socialcount-small > li:hover > a > span {
+   opacity: 1;
 }
 /* Icons */
 .icon {
