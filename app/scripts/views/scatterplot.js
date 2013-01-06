@@ -61,7 +61,6 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     this.yScale = d3.scale.linear().range([height, 0]);
     this.colorScale = d3.scale.linear().range(["#0000cc", "#cc0000"]);
     this.sizeScale = d3.scale.linear().range([3, 10]);
-    this.chromaticScale = d3.scale.ordinal().range(['C', 'D&#9837;', 'D', 'E&#9837;', 'E', 'F', 'G&#9837;', 'G', 'A&#9837;', 'A', 'B&#9837;', 'B']);
 
     // Axes
     this.xAxis = d3.svg.axis()
@@ -192,23 +191,27 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
     var self = this,
         param_y = this.model.get('param_y');
 
-    /*if (param_y === 'key') {
-      this.yAxis.scale(this.chromaticScale);
-      this.yScale = this.chromaticScale;
-    }*/
+    if (param_y === 'key') {
+      var keys = ['C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭', 'A', 'B♭', 'B'];
+      this.yAxis.tickFormat(function(d, i){
+        return keys[d];
+      });
+    } else {
+      this.yAxis.tickFormat(null);
+    }
 
     this.yScale.domain(d3.extent(this.data, function(d) { return d[param_y]; })).nice();
 
     this.svg.selectAll('.dot')
         .transition()
         .ease('linear')
-        .duration(1000)
+        .duration(500)
         .attr("cy", function(d) { return self.yScale(d[param_y]); });
 
     this.svg.selectAll('.y')
         .transition()
         .ease('linear')
-        .duration(1000)
+        .duration(500)
         .call(this.yAxis);
   },
 
