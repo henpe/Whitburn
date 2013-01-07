@@ -22,6 +22,12 @@ a {
 a:hover {
   color: #86dbc0;
 }
+a.home {
+  color: inherit;
+}
+a.home:hover {
+  color: #fff;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -325,9 +331,11 @@ body {
   background-color:#535663;
 }
 .player .slider {
-    margin: 20px 8px;
-    width: 90%;
-    float: left;
+    top:18px;
+    bottom:20px;
+    left:64px;
+    right: 48px;
+    position: absolute;
 }
 .player .soundcloud-container {
     position: absolute;
