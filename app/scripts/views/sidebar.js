@@ -56,8 +56,8 @@ whitburn.Views.Sidebar = Backbone.View.extend({
           year: track.get('year'),
           rank: track.get('yearly_rank'),
           id: track.get('id'),
-          title: track.get('title'),
-          artist: track.get('artist')
+          title: encodeURIComponent(track.get('song')),
+          artist: encodeURIComponent(track.get('artist'))
         })
       );
 
