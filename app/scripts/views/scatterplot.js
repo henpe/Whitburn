@@ -147,9 +147,10 @@ whitburn.Views.ScatterPlot = Backbone.View.extend({
         .style("fill", function(d) { return self.colorScale(d[param_color]); })
       .on("click", this.onClick);
 
-    this.svg.selectAll('.dot')
+    // TODO: This breaks Safari for some reason
+    /*this.svg.selectAll('.dot')
         .call(bootstrap.tooltip()
-          .placement("right"));
+          .placement("right"));*/
   },
 
   /**
