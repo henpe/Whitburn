@@ -278,6 +278,7 @@ body {
   color:#eee;
   text-align: center;
   border-bottom:1px solid #ccc;
+  padding: 10px 5px;
 }
 .filters .filter {
   display: inline-block;
@@ -285,11 +286,18 @@ body {
 }
 .filters label {
   font-size: 14px;
+  line-height: 28px;
+  vertical-align: middle;
 }
 .filters .select2-container {
-  vertical-align: baseline;
-  width:170px;
+  width:160px;
   text-align: left;
+}
+
+@media screen and (max-width: 1024px) {
+  .filters .select2-container {
+    width:auto;
+  }
 }
 
 /* Plot */
