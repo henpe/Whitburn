@@ -1,4 +1,4 @@
-Remix of a century
+Remix of the century
 ========
 
 http://www.remixofthecentury.com/
